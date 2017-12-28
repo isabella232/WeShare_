@@ -1,0 +1,964 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		062570421FECAEB70056FB8B /* HLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570411FECAEB70056FB8B /* HLNetworkManager.swift */; };
+		062570451FECB5D90056FB8B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570441FECB5D90056FB8B /* LoginViewController.swift */; };
+		062570471FECB5EF0056FB8B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570461FECB5EF0056FB8B /* RegisterViewController.swift */; };
+		062570491FECD94F0056FB8B /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570481FECD94F0056FB8B /* LoginModel.swift */; };
+		0625704D1FECF9F50056FB8B /* HLBasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625704C1FECF9F50056FB8B /* HLBasePresenter.swift */; };
+		0625704F1FECFA180056FB8B /* HLBaseQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625704E1FECFA180056FB8B /* HLBaseQuerier.swift */; };
+		062570511FECFA320056FB8B /* HLBaseDvo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570501FECFA320056FB8B /* HLBaseDvo.swift */; };
+		062E6FE91FF34A8C00EC92F2 /* HLBaseNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062E6FE81FF34A8C00EC92F2 /* HLBaseNao.swift */; };
+		062E6FEB1FF35CBB00EC92F2 /* LoginNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062E6FEA1FF35CBB00EC92F2 /* LoginNao.swift */; };
+		062E6FED1FF3750700EC92F2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062E6FEC1FF3750700EC92F2 /* BaseViewController.swift */; };
+		062E6FF11FF3813100EC92F2 /* HomeNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062E6FF01FF3813100EC92F2 /* HomeNao.swift */; };
+		0634FFED1FF2400100FA4980 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0634FFEC1FF2400100FA4980 /* HomeTableViewCell.swift */; };
+		0668C9941FECAC9D002AA541 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0668C9931FECAC9D002AA541 /* HomeViewController.swift */; };
+		068140D21FF478D600705244 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068140D11FF478D600705244 /* LoginPresenter.swift */; };
+		068140D41FF4839800705244 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068140D31FF4839800705244 /* HomePresenter.swift */; };
+		068140E31FF4F90200705244 /* HLBaseListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068140E21FF4F90200705244 /* HLBaseListener.swift */; };
+		06A15D0E1FEB9AF700D7DCB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A15D0D1FEB9AF700D7DCB5 /* AppDelegate.swift */; };
+		06A15D131FEB9AF700D7DCB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A15D111FEB9AF700D7DCB5 /* Main.storyboard */; };
+		06A15D161FEB9AF700D7DCB5 /* HLShare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06A15D141FEB9AF700D7DCB5 /* HLShare.xcdatamodeld */; };
+		06A15D181FEB9AF700D7DCB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06A15D171FEB9AF700D7DCB5 /* Assets.xcassets */; };
+		06A15D1B1FEB9AF700D7DCB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A15D191FEB9AF700D7DCB5 /* LaunchScreen.storyboard */; };
+		06A15D261FEB9AF700D7DCB5 /* HLShareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A15D251FEB9AF700D7DCB5 /* HLShareTests.swift */; };
+		06A15D311FEB9AF700D7DCB5 /* HLShareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A15D301FEB9AF700D7DCB5 /* HLShareUITests.swift */; };
+		06D837751FF0DE330037628C /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D837741FF0DE330037628C /* SwiftNotice.swift */; };
+		06D837771FF0DED70037628C /* SwiftPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D837761FF0DED70037628C /* SwiftPrefix.swift */; };
+		06D837791FF0E5810037628C /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D837781FF0E5810037628C /* HomeModel.swift */; };
+		06D8377B1FF11BAC0037628C /* HLPoiDvo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D8377A1FF11BAC0037628C /* HLPoiDvo.swift */; };
+		06D8377D1FF11C860037628C /* UserDvo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D8377C1FF11C860037628C /* UserDvo.swift */; };
+		0C052C352EC13281FF1E21D7 /* Pods_HLShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAE5C4A87618CB795CD183D /* Pods_HLShare.framework */; };
+		72484368733E239B13EA6158 /* Pods_HLShareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF5A33985ED3F2B3B50E392 /* Pods_HLShareTests.framework */; };
+		D4F40A92BB65346856C83206 /* Pods_HLShareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3267189919C1D99405A4265D /* Pods_HLShareUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		06A15D221FEB9AF700D7DCB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06A15D021FEB9AF700D7DCB5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06A15D091FEB9AF700D7DCB5;
+			remoteInfo = HLShare;
+		};
+		06A15D2D1FEB9AF700D7DCB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06A15D021FEB9AF700D7DCB5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06A15D091FEB9AF700D7DCB5;
+			remoteInfo = HLShare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		062570411FECAEB70056FB8B /* HLNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLNetworkManager.swift; sourceTree = "<group>"; };
+		062570441FECB5D90056FB8B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		062570461FECB5EF0056FB8B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		062570481FECD94F0056FB8B /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		0625704C1FECF9F50056FB8B /* HLBasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLBasePresenter.swift; sourceTree = "<group>"; };
+		0625704E1FECFA180056FB8B /* HLBaseQuerier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLBaseQuerier.swift; sourceTree = "<group>"; };
+		062570501FECFA320056FB8B /* HLBaseDvo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLBaseDvo.swift; sourceTree = "<group>"; };
+		062E6FE81FF34A8C00EC92F2 /* HLBaseNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLBaseNao.swift; sourceTree = "<group>"; };
+		062E6FEA1FF35CBB00EC92F2 /* LoginNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNao.swift; sourceTree = "<group>"; };
+		062E6FEC1FF3750700EC92F2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		062E6FF01FF3813100EC92F2 /* HomeNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNao.swift; sourceTree = "<group>"; };
+		0634FFEC1FF2400100FA4980 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		0668C9931FECAC9D002AA541 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		068140D11FF478D600705244 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		068140D31FF4839800705244 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		068140D51FF49B5E00705244 /* HLShare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HLShare-Bridging-Header.h"; sourceTree = "<group>"; };
+		068140DD1FF4C06000705244 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		068140DE1FF4C06000705244 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		068140E21FF4F90200705244 /* HLBaseListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLBaseListener.swift; sourceTree = "<group>"; };
+		06A15D0A1FEB9AF700D7DCB5 /* HLShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HLShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		06A15D0D1FEB9AF700D7DCB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		06A15D121FEB9AF700D7DCB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		06A15D151FEB9AF700D7DCB5 /* HLShare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HLShare.xcdatamodel; sourceTree = "<group>"; };
+		06A15D171FEB9AF700D7DCB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		06A15D1A1FEB9AF700D7DCB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		06A15D1C1FEB9AF700D7DCB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06A15D211FEB9AF700D7DCB5 /* HLShareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLShareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		06A15D251FEB9AF700D7DCB5 /* HLShareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLShareTests.swift; sourceTree = "<group>"; };
+		06A15D271FEB9AF700D7DCB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06A15D2C1FEB9AF700D7DCB5 /* HLShareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLShareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		06A15D301FEB9AF700D7DCB5 /* HLShareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLShareUITests.swift; sourceTree = "<group>"; };
+		06A15D321FEB9AF700D7DCB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06D837741FF0DE330037628C /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
+		06D837761FF0DED70037628C /* SwiftPrefix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPrefix.swift; sourceTree = "<group>"; };
+		06D837781FF0E5810037628C /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		06D8377A1FF11BAC0037628C /* HLPoiDvo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLPoiDvo.swift; sourceTree = "<group>"; };
+		06D8377C1FF11C860037628C /* UserDvo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDvo.swift; sourceTree = "<group>"; };
+		2404E637D2E5778DCD25F473 /* Pods-HLShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HLShare/Pods-HLShare.debug.xcconfig"; sourceTree = "<group>"; };
+		3267189919C1D99405A4265D /* Pods_HLShareUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HLShareUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BAE5C4A87618CB795CD183D /* Pods_HLShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HLShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		615B0166F7EBB29A4E7C1ADD /* Pods-HLShareUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLShareUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HLShareUITests/Pods-HLShareUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6BF5A33985ED3F2B3B50E392 /* Pods_HLShareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HLShareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92FCF699FDD251B7AD5ED615 /* Pods-HLShareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLShareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HLShareTests/Pods-HLShareTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B8D3D64532F21C479A4AE05C /* Pods-HLShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-HLShare/Pods-HLShare.release.xcconfig"; sourceTree = "<group>"; };
+		BB679D4A85B56E2669403AEC /* Pods-HLShareUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLShareUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HLShareUITests/Pods-HLShareUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FCF8BFDBB03624B9EBEC53A8 /* Pods-HLShareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLShareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HLShareTests/Pods-HLShareTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		06A15D071FEB9AF700D7DCB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C052C352EC13281FF1E21D7 /* Pods_HLShare.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06A15D1E1FEB9AF700D7DCB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72484368733E239B13EA6158 /* Pods_HLShareTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06A15D291FEB9AF700D7DCB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F40A92BB65346856C83206 /* Pods_HLShareUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		062570431FECB5130056FB8B /* login(登录注册) */ = {
+			isa = PBXGroup;
+			children = (
+				062570441FECB5D90056FB8B /* LoginViewController.swift */,
+				062570461FECB5EF0056FB8B /* RegisterViewController.swift */,
+				062570481FECD94F0056FB8B /* LoginModel.swift */,
+				062E6FEA1FF35CBB00EC92F2 /* LoginNao.swift */,
+				068140D11FF478D600705244 /* LoginPresenter.swift */,
+			);
+			path = "login(登录注册)";
+			sourceTree = "<group>";
+		};
+		062570521FECFA5E0056FB8B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				062E6FE71FF34A7700EC92F2 /* NAO */,
+				062E6FE61FF3487300EC92F2 /* DVO */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		062E6FE61FF3487300EC92F2 /* DVO */ = {
+			isa = PBXGroup;
+			children = (
+				062570501FECFA320056FB8B /* HLBaseDvo.swift */,
+				06D8377A1FF11BAC0037628C /* HLPoiDvo.swift */,
+				06D8377C1FF11C860037628C /* UserDvo.swift */,
+			);
+			path = DVO;
+			sourceTree = "<group>";
+		};
+		062E6FE71FF34A7700EC92F2 /* NAO */ = {
+			isa = PBXGroup;
+			children = (
+				062570411FECAEB70056FB8B /* HLNetworkManager.swift */,
+				0625704C1FECF9F50056FB8B /* HLBasePresenter.swift */,
+				0625704E1FECFA180056FB8B /* HLBaseQuerier.swift */,
+				062E6FE81FF34A8C00EC92F2 /* HLBaseNao.swift */,
+				068140E21FF4F90200705244 /* HLBaseListener.swift */,
+			);
+			path = NAO;
+			sourceTree = "<group>";
+		};
+		0668C98E1FECA6D3002AA541 /* Home(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				06D837811FF11F320037628C /* V */,
+				06D837801FF11F180037628C /* M */,
+			);
+			path = "Home(首页)";
+			sourceTree = "<group>";
+		};
+		0668C98F1FECA6EC002AA541 /* supportsFile */ = {
+			isa = PBXGroup;
+			children = (
+				06A15D1C1FEB9AF700D7DCB5 /* Info.plist */,
+				06A15D0D1FEB9AF700D7DCB5 /* AppDelegate.swift */,
+				06A15D111FEB9AF700D7DCB5 /* Main.storyboard */,
+				06A15D171FEB9AF700D7DCB5 /* Assets.xcassets */,
+				06A15D191FEB9AF700D7DCB5 /* LaunchScreen.storyboard */,
+				06A15D141FEB9AF700D7DCB5 /* HLShare.xcdatamodeld */,
+				068140D51FF49B5E00705244 /* HLShare-Bridging-Header.h */,
+			);
+			path = supportsFile;
+			sourceTree = "<group>";
+		};
+		0668C9921FECA95F002AA541 /* Tools(工具类) */ = {
+			isa = PBXGroup;
+			children = (
+				06D837761FF0DED70037628C /* SwiftPrefix.swift */,
+				06D837741FF0DE330037628C /* SwiftNotice.swift */,
+				062E6FEC1FF3750700EC92F2 /* BaseViewController.swift */,
+			);
+			path = "Tools(工具类)";
+			sourceTree = "<group>";
+		};
+		06A15D011FEB9AF700D7DCB5 = {
+			isa = PBXGroup;
+			children = (
+				06A15D0C1FEB9AF700D7DCB5 /* HLShare */,
+				06A15D241FEB9AF700D7DCB5 /* HLShareTests */,
+				06A15D2F1FEB9AF700D7DCB5 /* HLShareUITests */,
+				06A15D0B1FEB9AF700D7DCB5 /* Products */,
+				6C306D642251499440C6C9CB /* Pods */,
+				E6B8A1FAD1A09080EDFC39A4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		06A15D0B1FEB9AF700D7DCB5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06A15D0A1FEB9AF700D7DCB5 /* HLShare.app */,
+				06A15D211FEB9AF700D7DCB5 /* HLShareTests.xctest */,
+				06A15D2C1FEB9AF700D7DCB5 /* HLShareUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		06A15D0C1FEB9AF700D7DCB5 /* HLShare */ = {
+			isa = PBXGroup;
+			children = (
+				062570521FECFA5E0056FB8B /* Presenter */,
+				062570431FECB5130056FB8B /* login(登录注册) */,
+				0668C9921FECA95F002AA541 /* Tools(工具类) */,
+				0668C98F1FECA6EC002AA541 /* supportsFile */,
+				0668C98E1FECA6D3002AA541 /* Home(首页) */,
+			);
+			path = HLShare;
+			sourceTree = "<group>";
+		};
+		06A15D241FEB9AF700D7DCB5 /* HLShareTests */ = {
+			isa = PBXGroup;
+			children = (
+				06A15D251FEB9AF700D7DCB5 /* HLShareTests.swift */,
+				06A15D271FEB9AF700D7DCB5 /* Info.plist */,
+			);
+			path = HLShareTests;
+			sourceTree = "<group>";
+		};
+		06A15D2F1FEB9AF700D7DCB5 /* HLShareUITests */ = {
+			isa = PBXGroup;
+			children = (
+				06A15D301FEB9AF700D7DCB5 /* HLShareUITests.swift */,
+				06A15D321FEB9AF700D7DCB5 /* Info.plist */,
+			);
+			path = HLShareUITests;
+			sourceTree = "<group>";
+		};
+		06D837801FF11F180037628C /* M */ = {
+			isa = PBXGroup;
+			children = (
+				06D837781FF0E5810037628C /* HomeModel.swift */,
+				062E6FF01FF3813100EC92F2 /* HomeNao.swift */,
+				068140D31FF4839800705244 /* HomePresenter.swift */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		06D837811FF11F320037628C /* V */ = {
+			isa = PBXGroup;
+			children = (
+				0668C9931FECAC9D002AA541 /* HomeViewController.swift */,
+				0634FFEC1FF2400100FA4980 /* HomeTableViewCell.swift */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		6C306D642251499440C6C9CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2404E637D2E5778DCD25F473 /* Pods-HLShare.debug.xcconfig */,
+				B8D3D64532F21C479A4AE05C /* Pods-HLShare.release.xcconfig */,
+				92FCF699FDD251B7AD5ED615 /* Pods-HLShareTests.debug.xcconfig */,
+				FCF8BFDBB03624B9EBEC53A8 /* Pods-HLShareTests.release.xcconfig */,
+				BB679D4A85B56E2669403AEC /* Pods-HLShareUITests.debug.xcconfig */,
+				615B0166F7EBB29A4E7C1ADD /* Pods-HLShareUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E6B8A1FAD1A09080EDFC39A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BAE5C4A87618CB795CD183D /* Pods_HLShare.framework */,
+				6BF5A33985ED3F2B3B50E392 /* Pods_HLShareTests.framework */,
+				3267189919C1D99405A4265D /* Pods_HLShareUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06A15D091FEB9AF700D7DCB5 /* HLShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06A15D351FEB9AF700D7DCB5 /* Build configuration list for PBXNativeTarget "HLShare" */;
+			buildPhases = (
+				C22FB8BC582364663F82A897 /* [CP] Check Pods Manifest.lock */,
+				06A15D061FEB9AF700D7DCB5 /* Sources */,
+				06A15D071FEB9AF700D7DCB5 /* Frameworks */,
+				06A15D081FEB9AF700D7DCB5 /* Resources */,
+				E90EE6C44B978DC638F72F02 /* [CP] Embed Pods Frameworks */,
+				3E3FF8B8241A2C3CEA76C8AE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HLShare;
+			productName = HLShare;
+			productReference = 06A15D0A1FEB9AF700D7DCB5 /* HLShare.app */;
+			productType = "com.apple.product-type.application";
+		};
+		06A15D201FEB9AF700D7DCB5 /* HLShareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06A15D381FEB9AF700D7DCB5 /* Build configuration list for PBXNativeTarget "HLShareTests" */;
+			buildPhases = (
+				67FC759497BA7D428D014400 /* [CP] Check Pods Manifest.lock */,
+				06A15D1D1FEB9AF700D7DCB5 /* Sources */,
+				06A15D1E1FEB9AF700D7DCB5 /* Frameworks */,
+				06A15D1F1FEB9AF700D7DCB5 /* Resources */,
+				1BB979582EF7952043E0566E /* [CP] Embed Pods Frameworks */,
+				4EAFF952539F34C5E380C609 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				06A15D231FEB9AF700D7DCB5 /* PBXTargetDependency */,
+			);
+			name = HLShareTests;
+			productName = HLShareTests;
+			productReference = 06A15D211FEB9AF700D7DCB5 /* HLShareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		06A15D2B1FEB9AF700D7DCB5 /* HLShareUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06A15D3B1FEB9AF700D7DCB5 /* Build configuration list for PBXNativeTarget "HLShareUITests" */;
+			buildPhases = (
+				5AEA283F7BD5C7C9B48DDF67 /* [CP] Check Pods Manifest.lock */,
+				06A15D281FEB9AF700D7DCB5 /* Sources */,
+				06A15D291FEB9AF700D7DCB5 /* Frameworks */,
+				06A15D2A1FEB9AF700D7DCB5 /* Resources */,
+				CBF59A1F77C4EA8B91EDC567 /* [CP] Embed Pods Frameworks */,
+				5558CEFE524D34CB45DA6E25 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				06A15D2E1FEB9AF700D7DCB5 /* PBXTargetDependency */,
+			);
+			name = HLShareUITests;
+			productName = HLShareUITests;
+			productReference = 06A15D2C1FEB9AF700D7DCB5 /* HLShareUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		06A15D021FEB9AF700D7DCB5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = HLApple;
+				TargetAttributes = {
+					06A15D091FEB9AF700D7DCB5 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					06A15D201FEB9AF700D7DCB5 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 06A15D091FEB9AF700D7DCB5;
+					};
+					06A15D2B1FEB9AF700D7DCB5 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 06A15D091FEB9AF700D7DCB5;
+					};
+				};
+			};
+			buildConfigurationList = 06A15D051FEB9AF700D7DCB5 /* Build configuration list for PBXProject "HLShare" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 06A15D011FEB9AF700D7DCB5;
+			productRefGroup = 06A15D0B1FEB9AF700D7DCB5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				06A15D091FEB9AF700D7DCB5 /* HLShare */,
+				06A15D201FEB9AF700D7DCB5 /* HLShareTests */,
+				06A15D2B1FEB9AF700D7DCB5 /* HLShareUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		06A15D081FEB9AF700D7DCB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06A15D1B1FEB9AF700D7DCB5 /* LaunchScreen.storyboard in Resources */,
+				06A15D181FEB9AF700D7DCB5 /* Assets.xcassets in Resources */,
+				06A15D131FEB9AF700D7DCB5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06A15D1F1FEB9AF700D7DCB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06A15D2A1FEB9AF700D7DCB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BB979582EF7952043E0566E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HLShareTests/Pods-HLShareTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E3FF8B8241A2C3CEA76C8AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HLShare/Pods-HLShare-resources.sh",
+				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HLShare/Pods-HLShare-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4EAFF952539F34C5E380C609 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HLShareTests/Pods-HLShareTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5558CEFE524D34CB45DA6E25 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HLShareUITests/Pods-HLShareUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AEA283F7BD5C7C9B48DDF67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HLShareUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67FC759497BA7D428D014400 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HLShareTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C22FB8BC582364663F82A897 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HLShare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBF59A1F77C4EA8B91EDC567 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HLShareUITests/Pods-HLShareUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E90EE6C44B978DC638F72F02 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HLShare/Pods-HLShare-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HLShare/Pods-HLShare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		06A15D061FEB9AF700D7DCB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				062E6FEB1FF35CBB00EC92F2 /* LoginNao.swift in Sources */,
+				062E6FE91FF34A8C00EC92F2 /* HLBaseNao.swift in Sources */,
+				06D8377D1FF11C860037628C /* UserDvo.swift in Sources */,
+				062E6FED1FF3750700EC92F2 /* BaseViewController.swift in Sources */,
+				0625704F1FECFA180056FB8B /* HLBaseQuerier.swift in Sources */,
+				06D8377B1FF11BAC0037628C /* HLPoiDvo.swift in Sources */,
+				062570511FECFA320056FB8B /* HLBaseDvo.swift in Sources */,
+				062570421FECAEB70056FB8B /* HLNetworkManager.swift in Sources */,
+				0634FFED1FF2400100FA4980 /* HomeTableViewCell.swift in Sources */,
+				068140D21FF478D600705244 /* LoginPresenter.swift in Sources */,
+				06D837771FF0DED70037628C /* SwiftPrefix.swift in Sources */,
+				062570491FECD94F0056FB8B /* LoginModel.swift in Sources */,
+				06A15D0E1FEB9AF700D7DCB5 /* AppDelegate.swift in Sources */,
+				06D837791FF0E5810037628C /* HomeModel.swift in Sources */,
+				06A15D161FEB9AF700D7DCB5 /* HLShare.xcdatamodeld in Sources */,
+				062570471FECB5EF0056FB8B /* RegisterViewController.swift in Sources */,
+				062570451FECB5D90056FB8B /* LoginViewController.swift in Sources */,
+				06D837751FF0DE330037628C /* SwiftNotice.swift in Sources */,
+				0668C9941FECAC9D002AA541 /* HomeViewController.swift in Sources */,
+				0625704D1FECF9F50056FB8B /* HLBasePresenter.swift in Sources */,
+				068140E31FF4F90200705244 /* HLBaseListener.swift in Sources */,
+				062E6FF11FF3813100EC92F2 /* HomeNao.swift in Sources */,
+				068140D41FF4839800705244 /* HomePresenter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06A15D1D1FEB9AF700D7DCB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06A15D261FEB9AF700D7DCB5 /* HLShareTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06A15D281FEB9AF700D7DCB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06A15D311FEB9AF700D7DCB5 /* HLShareUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		06A15D231FEB9AF700D7DCB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06A15D091FEB9AF700D7DCB5 /* HLShare */;
+			targetProxy = 06A15D221FEB9AF700D7DCB5 /* PBXContainerItemProxy */;
+		};
+		06A15D2E1FEB9AF700D7DCB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06A15D091FEB9AF700D7DCB5 /* HLShare */;
+			targetProxy = 06A15D2D1FEB9AF700D7DCB5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		06A15D111FEB9AF700D7DCB5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06A15D121FEB9AF700D7DCB5 /* Base */,
+				068140DD1FF4C06000705244 /* zh-Hans */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		06A15D191FEB9AF700D7DCB5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06A15D1A1FEB9AF700D7DCB5 /* Base */,
+				068140DE1FF4C06000705244 /* zh-Hans */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		06A15D331FEB9AF700D7DCB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		06A15D341FEB9AF700D7DCB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		06A15D361FEB9AF700D7DCB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2404E637D2E5778DCD25F473 /* Pods-HLShare.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/HLShare/supportsFile/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEVELOPMENT";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lufire.weshare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HLShare/supportsFile/HLShare-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		06A15D371FEB9AF700D7DCB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8D3D64532F21C479A4AE05C /* Pods-HLShare.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/HLShare/supportsFile/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lufire.weshare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HLShare/supportsFile/HLShare-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		06A15D391FEB9AF700D7DCB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92FCF699FDD251B7AD5ED615 /* Pods-HLShareTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HLShareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.baidu.com.HLShareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HLShare.app/HLShare";
+			};
+			name = Debug;
+		};
+		06A15D3A1FEB9AF700D7DCB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCF8BFDBB03624B9EBEC53A8 /* Pods-HLShareTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HLShareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.baidu.com.HLShareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HLShare.app/HLShare";
+			};
+			name = Release;
+		};
+		06A15D3C1FEB9AF700D7DCB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB679D4A85B56E2669403AEC /* Pods-HLShareUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HLShareUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.baidu.com.HLShareUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HLShare;
+			};
+			name = Debug;
+		};
+		06A15D3D1FEB9AF700D7DCB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 615B0166F7EBB29A4E7C1ADD /* Pods-HLShareUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HLShareUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.baidu.com.HLShareUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HLShare;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06A15D051FEB9AF700D7DCB5 /* Build configuration list for PBXProject "HLShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06A15D331FEB9AF700D7DCB5 /* Debug */,
+				06A15D341FEB9AF700D7DCB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06A15D351FEB9AF700D7DCB5 /* Build configuration list for PBXNativeTarget "HLShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06A15D361FEB9AF700D7DCB5 /* Debug */,
+				06A15D371FEB9AF700D7DCB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06A15D381FEB9AF700D7DCB5 /* Build configuration list for PBXNativeTarget "HLShareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06A15D391FEB9AF700D7DCB5 /* Debug */,
+				06A15D3A1FEB9AF700D7DCB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06A15D3B1FEB9AF700D7DCB5 /* Build configuration list for PBXNativeTarget "HLShareUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06A15D3C1FEB9AF700D7DCB5 /* Debug */,
+				06A15D3D1FEB9AF700D7DCB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		06A15D141FEB9AF700D7DCB5 /* HLShare.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				06A15D151FEB9AF700D7DCB5 /* HLShare.xcdatamodel */,
+			);
+			currentVersion = 06A15D151FEB9AF700D7DCB5 /* HLShare.xcdatamodel */;
+			path = HLShare.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 06A15D021FEB9AF700D7DCB5 /* Project object */;
+}
