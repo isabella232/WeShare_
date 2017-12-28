@@ -25,12 +25,6 @@ class HLBaseNao {
     }
     
     
-    /// 生成网络请求参数的对象
-    /// 子类需要重写 querier 方法给 querier 注入参数
-    /// - Returns: NetQuerier
-    static func querier() -> HLBaseQuerier {
-        return HLBaseQuerier()
-    }
     
 }
 

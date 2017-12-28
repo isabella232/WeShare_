@@ -13,8 +13,5 @@ class HLBaseQuerier: NSObject {
     var url: String!
     var param: [String: Any]!
     var listener: HLBaseListener!
-    
-    
-    
     override init() {super.init()}
 }
