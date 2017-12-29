@@ -20,11 +20,11 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let cell =  sender.superview?.superview as! HomeTableViewCell
         let row = homeTableView.indexPath(for: cell)?.row
         let demand = self.demandsModel!.demands![row!]
-        presenter.tenderEdit(id: demand.id, success: { (dvo) in
-            sender.setTitle("已修改", for: .normal)
-        }) { (code, msg) in
-            
-        }
+//        presenter.tenderEdit(id: demand.id, success: { (dvo) in
+//            sender.setTitle("已修改", for: .normal)
+//        }) { (code, msg) in
+//
+//        }
     }
     // 投标
     @IBAction func clickTender(_ sender: UIButton) {
@@ -34,13 +34,13 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let demand = self.demandsModel!.demands![row!]
         
         // 能投标
-        if demand.canTender() {
-            presenter.tender( demandId: demand.id!, success: { (dvo) in
-                sender.setTitle("已投标", for: .normal)
-            }, failure: { (code, msg) in
-                
-            })
-        }
+//        if demand.canTender() {
+//            presenter.tender( demandId: demand.id!, success: { (dvo) in
+//                sender.setTitle("已投标", for: .normal)
+//            }, failure: { (code, msg) in
+//
+//            })
+//        }
         
        
         
@@ -56,13 +56,13 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         self.homeTableView.rowHeight = 500
         
-        presenter.getBuyerOrder(success: {[unowned self] (dvo) in
-            let demands =  dvo as! DemandsResult
-            self.demandsModel = demands
-            self.homeTableView.reloadData()
-        }) { (code, msg) in
-            
-        }
+//        presenter.getBuyerOrder(success: {[unowned self] (dvo) in
+//            let demands =  dvo as! DemandsResult
+//            self.demandsModel = demands
+//            self.homeTableView.reloadData()
+//        }) { (code, msg) in
+//            
+//        }
         
     }
    

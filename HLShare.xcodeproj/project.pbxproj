@@ -14,6 +14,8 @@
 		0625704D1FECF9F50056FB8B /* HLBasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625704C1FECF9F50056FB8B /* HLBasePresenter.swift */; };
 		0625704F1FECFA180056FB8B /* HLBaseQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625704E1FECFA180056FB8B /* HLBaseQuerier.swift */; };
 		062570511FECFA320056FB8B /* HLBaseDvo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570501FECFA320056FB8B /* HLBaseDvo.swift */; };
+		062D03CB1FF60F70001098B3 /* LoginListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D03CA1FF60F70001098B3 /* LoginListener.swift */; };
+		062D04301FF64961001098B3 /* Nao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D042F1FF64961001098B3 /* Nao.swift */; };
 		062E6FE91FF34A8C00EC92F2 /* HLBaseNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062E6FE81FF34A8C00EC92F2 /* HLBaseNao.swift */; };
 		062E6FEB1FF35CBB00EC92F2 /* LoginNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062E6FEA1FF35CBB00EC92F2 /* LoginNao.swift */; };
 		062E6FED1FF3750700EC92F2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062E6FEC1FF3750700EC92F2 /* BaseViewController.swift */; };
@@ -65,6 +67,8 @@
 		0625704C1FECF9F50056FB8B /* HLBasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLBasePresenter.swift; sourceTree = "<group>"; };
 		0625704E1FECFA180056FB8B /* HLBaseQuerier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLBaseQuerier.swift; sourceTree = "<group>"; };
 		062570501FECFA320056FB8B /* HLBaseDvo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLBaseDvo.swift; sourceTree = "<group>"; };
+		062D03CA1FF60F70001098B3 /* LoginListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginListener.swift; sourceTree = "<group>"; };
+		062D042F1FF64961001098B3 /* Nao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nao.swift; sourceTree = "<group>"; };
 		062E6FE81FF34A8C00EC92F2 /* HLBaseNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLBaseNao.swift; sourceTree = "<group>"; };
 		062E6FEA1FF35CBB00EC92F2 /* LoginNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNao.swift; sourceTree = "<group>"; };
 		062E6FEC1FF3750700EC92F2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 				062570481FECD94F0056FB8B /* LoginModel.swift */,
 				062E6FEA1FF35CBB00EC92F2 /* LoginNao.swift */,
 				068140D11FF478D600705244 /* LoginPresenter.swift */,
+				062D03CA1FF60F70001098B3 /* LoginListener.swift */,
 			);
 			path = "login(登录注册)";
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 		062E6FE71FF34A7700EC92F2 /* NAO */ = {
 			isa = PBXGroup;
 			children = (
+				062D042F1FF64961001098B3 /* Nao.swift */,
 				062570411FECAEB70056FB8B /* HLNetworkManager.swift */,
 				0625704C1FECF9F50056FB8B /* HLBasePresenter.swift */,
 				0625704E1FECFA180056FB8B /* HLBaseQuerier.swift */,
@@ -632,6 +638,8 @@
 				0668C9941FECAC9D002AA541 /* HomeViewController.swift in Sources */,
 				0625704D1FECF9F50056FB8B /* HLBasePresenter.swift in Sources */,
 				068140E31FF4F90200705244 /* HLBaseListener.swift in Sources */,
+				062D03CB1FF60F70001098B3 /* LoginListener.swift in Sources */,
+				062D04301FF64961001098B3 /* Nao.swift in Sources */,
 				062E6FF11FF3813100EC92F2 /* HomeNao.swift in Sources */,
 				068140D41FF4839800705244 /* HomePresenter.swift in Sources */,
 			);

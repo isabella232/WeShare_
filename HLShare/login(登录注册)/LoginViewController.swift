@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import HyphenateLite
+//import HyphenateLite
 class LoginViewController: UIViewController {
 
     var presenter = LoginPresenter()
@@ -23,23 +23,19 @@ class LoginViewController: UIViewController {
     /// - Parameter sender: <#sender description#>
     @IBAction func userLogin(_ sender: UIButton) {
         
-        presenter.login(userId: "aaaaaa", password: "111111", success: {[unowned self] (dvo) in
-            let model = dvo as! LoginModel
-            EMClient.shared().login(withUsername:model.easemobUserName , password: model.easemobPassword, completion: { (userName, error) in
-                if error != nil{
-                    print("--------登录成功---------")
-                }else{
-                    print("--------登录失败---------")
-                }
-            })
-            UIApplication.shared.keyWindow?.rootViewController =  self.storyboard?.instantiateViewController(withIdentifier: "MainTabbar")
-        }) { (code,error) in
+     //   let model = dvo as! LoginModel
+        //            EMClient.shared().login(withUsername:model.easemobUserName , password: model.easemobPassword, completion: { (userName, error) in
+        //                if error != nil{
+        //                    print("--------登录成功---------")
+        //                }else{
+        //                    print("--------登录失败---------")
+        //                }
+        //            })
+//        UIApplication.shared.keyWindow?.rootViewController =  self.storyboard?.instantiateViewController(withIdentifier: "MainTabbar")
 
-        }
+        presenter.login(userId: "aaaaaa", password: "111111")
+    
     }
-    
-    
-   
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

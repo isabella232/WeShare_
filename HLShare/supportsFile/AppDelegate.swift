@@ -21,23 +21,23 @@ let HYPHENATELITE_API_KEY = "aa1c2e092bdd44cfc02b1d80d52869ac"
 
 #endif
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate,BMKGeneralDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var mapManager = BMKMapManager()
+   // var mapManager = BMKMapManager()
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        let emOptions = EMOptions(appkey: HYPHENATELITE_API_KEY)
-        emOptions?.apnsCertName = "istore_dev"
-        EMClient.shared().initializeSDK(with: emOptions)
+//        let emOptions = EMOptions(appkey: HYPHENATELITE_API_KEY)
+//        emOptions?.apnsCertName = "istore_dev"
+//        EMClient.shared().initializeSDK(with: emOptions)
+//
+//        let ret = mapManager.start(BMK_SERVICES_API_KEY, generalDelegate: self)
+//        if !ret {print("---------百度地图初始化失败--------------")}
+//
+//        print("BMK_SERVICES_API_KEY: \(BMK_SERVICES_API_KEY)")
         
-        let ret = mapManager.start(BMK_SERVICES_API_KEY, generalDelegate: self)
-        if !ret {print("---------百度地图初始化失败--------------")}
-        
-        print("BMK_SERVICES_API_KEY: \(BMK_SERVICES_API_KEY)")
-                
         return true
     }
 
@@ -49,12 +49,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate,BMKGeneralDelegate {
     
     /// APP 进入后台
     func applicationDidEnterBackground(_ application: UIApplication) {
-       EMClient.shared().applicationDidEnterBackground(application)
+//       EMClient.shared().applicationDidEnterBackground(application)
     }
 
     /// APP 将要从后台返回
     func applicationWillEnterForeground(_ application: UIApplication) {
-        EMClient.shared().applicationWillEnterForeground(application)
+//        EMClient.shared().applicationWillEnterForeground(application)
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

@@ -8,8 +8,12 @@
 
 import UIKit
 
-class LoginPresenter: HLBasePresenter {
+class LoginPresenter: HLBasePresenter<LoginListener> {
     
+    override var listener: HLBaseListener?{
+        return LoginListener()
+    }
+
     
     /// 登录
     ///
@@ -18,8 +22,11 @@ class LoginPresenter: HLBasePresenter {
     ///   - password: 密码
     ///   - success: 成功
     ///   - failure: 失败
-    func login(userId: String,password: String,success: @escaping successBlock,failure: @escaping failureBlock) {
-        execute(HandyJSON: LoginModel.self, nao: LoginNao.share, querier: LoginNao.login(userId, password), success: success, failure: failure)
+    func login(userId: String,password: String) {
+        execute(nao: LoginNao.share, querier: LoginNao.login(userId, password), listener: listener!)
     }
+    
+   
+    
    
 }

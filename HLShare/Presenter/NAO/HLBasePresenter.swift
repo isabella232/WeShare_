@@ -8,17 +8,29 @@
 
 import UIKit
 
-class HLBasePresenter {
-    lazy var m_nao = HLBaseNao()
-    lazy var m_listener = HLBaseListener()
-    lazy var m_querier = HLBaseQuerier()
+class HLBasePresenter<L: OnResponse> {
     
-    func execute<T: Result>(HandyJSON: T.Type,nao: HLBaseNao,querier: HLBaseQuerier,listener: HLBaseListener) -> Void {
-        nao.excute(netQuerier: querier, dov: HandyJSON)
+    lazy var nao = HLBaseNao<L>()
+    
+    var querier: HLBaseQuerier<L>?
+    
+    var listener: L?
+
+    lazy var pid: Int = 0
+    
+    
+    func execute(nao: HLBaseNao,querier: HLBaseQuerier<L>,listener: L){
+        querier.listener = listener
+        nao.excute(netQuerier: querier)
     }
     
     func execute() {
-        execute(HandyJSON: Result.self, nao: m_nao, querier: m_querier, listener: m_listener)
+        execute(nao: nao, querier: querier!, listener: listener!)
     }
+    
+    
 }
+
+
+
 

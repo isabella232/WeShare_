@@ -11,8 +11,10 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import HandyJSON
+
+
 typealias failureBlock = (Int?,String)->Void
-typealias successBlock = (_ T:HandyJSON)->Void
+typealias successBlock = (_ R:Result)->Void
 
 
 class Result: HandyJSON {
@@ -23,38 +25,37 @@ class Result: HandyJSON {
 }
 
 
-
-class HLNetworkManager {
-    
+class HLNetworkManager<R: Result> {
+ 
     /// 网络请求成功的状态码
     //static let successStatusCode = 0
     
-    static func POST<T:Result>(url: String,param: [String:Any],Dvo: T.Type,headers: HTTPHeaders? = nil,listener: HLBaseListener) {
+    static func POST(url: String,param: [String:Any],headers: HTTPHeaders? = nil,listener: HLBaseListener) {
         Alamofire.request(url, method: .post, parameters: param,headers: headers).responseJSON{ (response) in
             print("json: \(JSON(response.result.value ?? "josn 为空"))")
             switch response.result{
             case .success( _):
                 if let data = response.data {
-                    if let model = Dvo.deserialize(from: String(data: data, encoding: .utf8)){
+                    if let model = R.deserialize(from: String(data: data, encoding: .utf8)){
                         if model.error == 0{
-                            success(model)
+                            listener.success(model)
                             /// 如果token变化 就把token 及时更新
                             if let token = model.token{app_request_token = token}
                         }else{
                             print("----------Handle Json  处理失败---------")
-                            failure(400,"--------请求失败-----------")
+                            listener.failure(400,"--------请求失败-----------")
                         }
                     }else{
                         print("----------Handle Json  处理失败---------")
-                        failure(100,"----------Handle Json  处理失败---------")
+                        listener.failure(100,"----------Handle Json  处理失败---------")
                     }
                 }else{
                     print("----------data  nil---------")
-                    failure(200,"----------data  nil---------")
+                    listener.failure(200,"----------data  nil---------")
                 }
             case .failure(let  error):
                 print("----------网络故障: \(error.localizedDescription)--------")
-                failure(300,"----------网络故障--------")
+                listener.failure(300,"----------网络故障--------")
             }
         }
     }

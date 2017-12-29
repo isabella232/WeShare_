@@ -8,13 +8,11 @@
 
 import UIKit
 
-class HLBaseQuerier: NSObject {
+class HLBaseQuerier<L: OnResponse> {
 
     var url: String!
     var param: [String: Any]!
-    var listener: HLBaseListener!
+    var listener: L!
+    init() {}
     
-    
-    
-    override init() {super.init()}
 }
