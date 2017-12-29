@@ -10,4 +10,10 @@ import UIKit
 
 class HLBaseListener: NSObject {
 
+    private var success: successBlock!
+    private var failure: failureBlock!
+    
+    func resopnse(success: successBlock,failure: failureBlock)  {
+        
+    }
 }
