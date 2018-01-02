@@ -10,15 +10,14 @@
 		062570421FECAEB70056FB8B /* HLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570411FECAEB70056FB8B /* HLNetworkManager.swift */; };
 		062570451FECB5D90056FB8B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570441FECB5D90056FB8B /* LoginViewController.swift */; };
 		062570471FECB5EF0056FB8B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570461FECB5EF0056FB8B /* RegisterViewController.swift */; };
-		062570491FECD94F0056FB8B /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570481FECD94F0056FB8B /* LoginModel.swift */; };
-		062570511FECFA320056FB8B /* HLBaseDvo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570501FECFA320056FB8B /* HLBaseDvo.swift */; };
+		062570491FECD94F0056FB8B /* LoginDvo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570481FECD94F0056FB8B /* LoginDvo.swift */; };
+		062570511FECFA320056FB8B /* Dvo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570501FECFA320056FB8B /* Dvo.swift */; };
 		062D04301FF64961001098B3 /* Nao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D042F1FF64961001098B3 /* Nao.swift */; };
 		062E6FEB1FF35CBB00EC92F2 /* LoginNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062E6FEA1FF35CBB00EC92F2 /* LoginNao.swift */; };
 		062E6FED1FF3750700EC92F2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062E6FEC1FF3750700EC92F2 /* BaseViewController.swift */; };
-		062E6FF11FF3813100EC92F2 /* HomeNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062E6FF01FF3813100EC92F2 /* HomeNao.swift */; };
 		0634FFED1FF2400100FA4980 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0634FFEC1FF2400100FA4980 /* HomeTableViewCell.swift */; };
 		0668C9941FECAC9D002AA541 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0668C9931FECAC9D002AA541 /* HomeViewController.swift */; };
-		068140D41FF4839800705244 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068140D31FF4839800705244 /* HomePresenter.swift */; };
+		068140D41FF4839800705244 /* LesseeDemandOrderNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068140D31FF4839800705244 /* LesseeDemandOrderNao.swift */; };
 		06A15D0E1FEB9AF700D7DCB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A15D0D1FEB9AF700D7DCB5 /* AppDelegate.swift */; };
 		06A15D131FEB9AF700D7DCB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A15D111FEB9AF700D7DCB5 /* Main.storyboard */; };
 		06A15D161FEB9AF700D7DCB5 /* HLShare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06A15D141FEB9AF700D7DCB5 /* HLShare.xcdatamodeld */; };
@@ -28,9 +27,7 @@
 		06A15D311FEB9AF700D7DCB5 /* HLShareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A15D301FEB9AF700D7DCB5 /* HLShareUITests.swift */; };
 		06D837751FF0DE330037628C /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D837741FF0DE330037628C /* SwiftNotice.swift */; };
 		06D837771FF0DED70037628C /* SwiftPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D837761FF0DED70037628C /* SwiftPrefix.swift */; };
-		06D837791FF0E5810037628C /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D837781FF0E5810037628C /* HomeModel.swift */; };
-		06D8377B1FF11BAC0037628C /* HLPoiDvo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D8377A1FF11BAC0037628C /* HLPoiDvo.swift */; };
-		06D8377D1FF11C860037628C /* UserDvo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D8377C1FF11C860037628C /* UserDvo.swift */; };
+		06D837791FF0E5810037628C /* DemandsResultDvo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D837781FF0E5810037628C /* DemandsResultDvo.swift */; };
 		0C052C352EC13281FF1E21D7 /* Pods_HLShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAE5C4A87618CB795CD183D /* Pods_HLShare.framework */; };
 		72484368733E239B13EA6158 /* Pods_HLShareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF5A33985ED3F2B3B50E392 /* Pods_HLShareTests.framework */; };
 		D4F40A92BB65346856C83206 /* Pods_HLShareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3267189919C1D99405A4265D /* Pods_HLShareUITests.framework */; };
@@ -57,15 +54,14 @@
 		062570411FECAEB70056FB8B /* HLNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLNetworkManager.swift; sourceTree = "<group>"; };
 		062570441FECB5D90056FB8B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		062570461FECB5EF0056FB8B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		062570481FECD94F0056FB8B /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
-		062570501FECFA320056FB8B /* HLBaseDvo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLBaseDvo.swift; sourceTree = "<group>"; };
+		062570481FECD94F0056FB8B /* LoginDvo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDvo.swift; sourceTree = "<group>"; };
+		062570501FECFA320056FB8B /* Dvo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dvo.swift; sourceTree = "<group>"; };
 		062D042F1FF64961001098B3 /* Nao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nao.swift; sourceTree = "<group>"; };
 		062E6FEA1FF35CBB00EC92F2 /* LoginNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNao.swift; sourceTree = "<group>"; };
 		062E6FEC1FF3750700EC92F2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		062E6FF01FF3813100EC92F2 /* HomeNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNao.swift; sourceTree = "<group>"; };
 		0634FFEC1FF2400100FA4980 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		0668C9931FECAC9D002AA541 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		068140D31FF4839800705244 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		068140D31FF4839800705244 /* LesseeDemandOrderNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LesseeDemandOrderNao.swift; sourceTree = "<group>"; };
 		068140D51FF49B5E00705244 /* HLShare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HLShare-Bridging-Header.h"; sourceTree = "<group>"; };
 		068140DD1FF4C06000705244 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		068140DE1FF4C06000705244 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -84,9 +80,7 @@
 		06A15D321FEB9AF700D7DCB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06D837741FF0DE330037628C /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		06D837761FF0DED70037628C /* SwiftPrefix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPrefix.swift; sourceTree = "<group>"; };
-		06D837781FF0E5810037628C /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
-		06D8377A1FF11BAC0037628C /* HLPoiDvo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLPoiDvo.swift; sourceTree = "<group>"; };
-		06D8377C1FF11C860037628C /* UserDvo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDvo.swift; sourceTree = "<group>"; };
+		06D837781FF0E5810037628C /* DemandsResultDvo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemandsResultDvo.swift; sourceTree = "<group>"; };
 		2404E637D2E5778DCD25F473 /* Pods-HLShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HLShare/Pods-HLShare.debug.xcconfig"; sourceTree = "<group>"; };
 		3267189919C1D99405A4265D /* Pods_HLShareUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HLShareUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BAE5C4A87618CB795CD183D /* Pods_HLShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HLShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,7 +125,7 @@
 			children = (
 				062570441FECB5D90056FB8B /* LoginViewController.swift */,
 				062570461FECB5EF0056FB8B /* RegisterViewController.swift */,
-				062570481FECD94F0056FB8B /* LoginModel.swift */,
+				062570481FECD94F0056FB8B /* LoginDvo.swift */,
 				062E6FEA1FF35CBB00EC92F2 /* LoginNao.swift */,
 			);
 			path = "login(登录注册)";
@@ -149,9 +143,7 @@
 		062E6FE61FF3487300EC92F2 /* DVO */ = {
 			isa = PBXGroup;
 			children = (
-				062570501FECFA320056FB8B /* HLBaseDvo.swift */,
-				06D8377A1FF11BAC0037628C /* HLPoiDvo.swift */,
-				06D8377C1FF11C860037628C /* UserDvo.swift */,
+				062570501FECFA320056FB8B /* Dvo.swift */,
 			);
 			path = DVO;
 			sourceTree = "<group>";
@@ -253,9 +245,8 @@
 		06D837801FF11F180037628C /* M */ = {
 			isa = PBXGroup;
 			children = (
-				06D837781FF0E5810037628C /* HomeModel.swift */,
-				062E6FF01FF3813100EC92F2 /* HomeNao.swift */,
-				068140D31FF4839800705244 /* HomePresenter.swift */,
+				06D837781FF0E5810037628C /* DemandsResultDvo.swift */,
+				068140D31FF4839800705244 /* LesseeDemandOrderNao.swift */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -600,24 +591,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				062E6FEB1FF35CBB00EC92F2 /* LoginNao.swift in Sources */,
-				06D8377D1FF11C860037628C /* UserDvo.swift in Sources */,
 				062E6FED1FF3750700EC92F2 /* BaseViewController.swift in Sources */,
-				06D8377B1FF11BAC0037628C /* HLPoiDvo.swift in Sources */,
-				062570511FECFA320056FB8B /* HLBaseDvo.swift in Sources */,
+				062570511FECFA320056FB8B /* Dvo.swift in Sources */,
 				062570421FECAEB70056FB8B /* HLNetworkManager.swift in Sources */,
 				0634FFED1FF2400100FA4980 /* HomeTableViewCell.swift in Sources */,
 				06D837771FF0DED70037628C /* SwiftPrefix.swift in Sources */,
-				062570491FECD94F0056FB8B /* LoginModel.swift in Sources */,
+				062570491FECD94F0056FB8B /* LoginDvo.swift in Sources */,
 				06A15D0E1FEB9AF700D7DCB5 /* AppDelegate.swift in Sources */,
-				06D837791FF0E5810037628C /* HomeModel.swift in Sources */,
+				06D837791FF0E5810037628C /* DemandsResultDvo.swift in Sources */,
 				06A15D161FEB9AF700D7DCB5 /* HLShare.xcdatamodeld in Sources */,
 				062570471FECB5EF0056FB8B /* RegisterViewController.swift in Sources */,
 				062570451FECB5D90056FB8B /* LoginViewController.swift in Sources */,
 				06D837751FF0DE330037628C /* SwiftNotice.swift in Sources */,
 				0668C9941FECAC9D002AA541 /* HomeViewController.swift in Sources */,
 				062D04301FF64961001098B3 /* Nao.swift in Sources */,
-				062E6FF11FF3813100EC92F2 /* HomeNao.swift in Sources */,
-				068140D41FF4839800705244 /* HomePresenter.swift in Sources */,
+				068140D41FF4839800705244 /* LesseeDemandOrderNao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

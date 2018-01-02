@@ -15,53 +15,46 @@ var app_request_token: String?
 
 class Presenter {
     
-    var nao: Nao?
+    var nao: Nao?{return nil}
     
-    var querier: Querier?
+    var querier: Querier?{return nil}
     
-    var listener: Listener?
-    
-    func execute(nao: Nao, querier: Querier,listener: Listener,json: Result.Type){
-        querier.listener = listener
+    func execute(nao: Nao, querier: Querier,json: Result.Type,success: @escaping successBlock,failure: @escaping failureBlock){
+        querier.success = success
+        querier.failure = failure
         nao.excute(querier: querier, json: json)
     }
     
-    func execute(json: Result.Type) {
-        execute(nao: nao!, querier: querier!, listener: listener!,json: Result.self)
+    func execute(json: Result.Type,success: @escaping successBlock,failure: @escaping failureBlock) {
+        execute(nao: nao!, querier: querier!, json: json, success: success, failure: failure)
     }
 }
 
 class Nao{
     func excute(querier: Querier,json: Result.Type) {
-        querier.param.updateValue("true", forKey: "silent")
-        if let t = app_request_token {
-            querier.param.updateValue(t, forKey: "token")
-        }
-        HLNetworkManager.POST(url: BASEURL + querier.url, param: querier.param, listener: querier.listener!,json: json)
+        if let t = app_request_token {querier.param.updateValue(t, forKey: "token")}
+        HLNetworkManager.POST(querier: querier,json: json)
     }
-
 }
+
+
 
 class Querier {
     
     var url: String!
     
-    var param =  [String: Any]()
+    var param: [String: Any] =  ["silent": "true"]
     
-    var listener: Listener?
+    var headers: [String: String]? = nil
+    
+    var success: successBlock!
+    
+    var failure: failureBlock!
     
 }
 
 
-class Listener {
-    
-    func success(_ dev: Result) -> Void{
-        
-    }
-    func failure(_ code: Int,_ msg: String) -> Void{
-        
-    }
-}
+
 
 
 

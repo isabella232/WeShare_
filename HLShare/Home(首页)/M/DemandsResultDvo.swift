@@ -29,7 +29,7 @@ class DemandsResult: Result{
     
     required init() {}
     
-    class Demand: HLPoiDvo {
+    class Demand: PoiDvo {
         
         var fileDvos: [FileDvo]?
         
@@ -43,18 +43,18 @@ class DemandsResult: Result{
         
         required init() {}
         
-        class FileDvo: HLBaseDvo {
+        class FileDvo: Dvo {
             /**文件路径 */
             var filePath: String?
             required init() {}
 
         }
         
-        class badeProvision: HLBaseDvo {
+        class badeProvision: Dvo {
             var saleItem: saleItem?
             required init() {}
             
-            class saleItem: HLPoiDvo {
+            class saleItem: PoiDvo {
                 /** 好评率 */
                 var  averageScore: Double?
                 

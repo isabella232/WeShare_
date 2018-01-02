@@ -1,5 +1,5 @@
 //
-//  LoginModel.swift
+//  LoginDvo.swift
 //  HLShare
 //
 //  Created by HLApple on 2017/12/22.
@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class LoginModel: Result{
+class LoginDvo: Result{
     required init() {}
     /// 环信用户名
     var easemobUserName: String?

@@ -10,6 +10,9 @@ import UIKit
 import HandyJSON
 class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    // 租方订单列表
+    var presenter = LesseeDemandOrderPresenter()
+
     /// 列表
     @IBOutlet weak var homeTableView: UITableView!
     
@@ -46,7 +49,6 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         
     }
-    var presenter = HomePresenter()
     
     // 返回的数据模型
     var demandsModel: DemandsResult?
@@ -56,13 +58,14 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         self.homeTableView.rowHeight = 500
         
-//        presenter.getBuyerOrder(success: {[unowned self] (dvo) in
-//            let demands =  dvo as! DemandsResult
-//            self.demandsModel = demands
-//            self.homeTableView.reloadData()
-//        }) { (code, msg) in
-//            
-//        }
+        presenter.getLesseeDemandOrder(success: {[unowned self] (dvo) in
+            let demands =  dvo as! DemandsResult
+            self.demandsModel = demands
+            self.homeTableView.reloadData()
+        }) { (code, msg) in
+            
+        }
+       
         
     }
    
