@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomePresenter: HLBasePresenter {
+class HomePresenter {
     
 //    func getBuyerOrder(success: @escaping successBlock,failure:@escaping failureBlock) {
 //        execute(HandyJSON: DemandsResult.self, nao: HomeNao(), querier: HomeNao.getBuyerOrder(), success: success, failure: failure)

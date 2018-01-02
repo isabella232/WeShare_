@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeNao: HLBaseNao{
+class HomeNao{
 
     /// 列出需求借口
     ///

@@ -11,7 +11,7 @@ target 'HLShare' do
     pod 'SnapKit'
     pod 'HandyJSON', '~> 4.0.0-beta.1'
     pod 'Hue'
-    
+    pod 'Kingfisher'
 
   # Pods for HLShare
 
