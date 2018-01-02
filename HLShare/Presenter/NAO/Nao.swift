@@ -19,22 +19,23 @@ class Presenter {
     
     var querier: Querier?{return nil}
     
-    func execute(nao: Nao, querier: Querier,json: Result.Type,success: @escaping successBlock,failure: @escaping failureBlock){
+    func execute<R: Result>(nao: Nao, querier: Querier, Result: R.Type, success: @escaping successBlock, failure: @escaping failureBlock){
         querier.success = success
         querier.failure = failure
-        nao.excute(querier: querier, json: json)
+        nao.excute(querier: querier,   Result:   Result)
     }
     
-    func execute(json: Result.Type,success: @escaping successBlock,failure: @escaping failureBlock) {
-        execute(nao: nao!, querier: querier!, json: json, success: success, failure: failure)
+    func execute<R: Result>(  Result: R.Type, success: @escaping successBlock, failure: @escaping failureBlock) {
+        execute(nao: nao!, querier: querier!, Result: Result, success: success, failure: failure)
     }
 }
 
 class Nao{
-    func excute(querier: Querier,json: Result.Type) {
+    func excute<R: Result>(querier: Querier, Result: R.Type) {
         if let t = app_request_token {querier.param.updateValue(t, forKey: "token")}
-        HLNetworkManager.POST(querier: querier,json: json)
+        HLNetworkManager.POST(querier: querier, Result: Result)
     }
+    
 }
 
 

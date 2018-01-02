@@ -19,7 +19,7 @@ class LoginNao: Nao{
 }
 class LoginPresenter: Presenter {
     func login(userId: String,password: String,success: @escaping successBlock,failure: @escaping failureBlock) {
-        execute(nao: LoginNao(), querier: LoginNao.loginQuerier(userId, password), json: LoginDvo.self, success: success, failure: failure)
+        execute(nao: LoginNao(), querier: LoginNao.loginQuerier(userId, password), Result: LoginDvo.self, success: success, failure: failure)
     }
 }
 

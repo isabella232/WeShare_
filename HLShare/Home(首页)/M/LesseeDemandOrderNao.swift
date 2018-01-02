@@ -108,7 +108,7 @@ class LesseeDemandOrderPresenter: Presenter {
     
     /// 租方 订单列表
     func getLesseeDemandOrder(success: @escaping successBlock,failure:@escaping failureBlock) {
-        execute(json: DemandsResult.self, success: success, failure: failure)
+        execute(  Result: DemandsResult.self, success: success, failure: failure)
     }
     
 //
