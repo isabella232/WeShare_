@@ -43,43 +43,12 @@ class DemandsResult: Result{
         
         required init() {}
         
-        class FileDvo: Dvo {
-            /**文件路径 */
-            var filePath: String?
-            required init() {}
-
-        }
         
         class badeProvision: Dvo {
             var saleItem: saleItem?
             required init() {}
             
-            class saleItem: PoiDvo {
-                /** 好评率 */
-                var  averageScore: Double?
-                
-                /** 价格 */
-                var  price: Float?
-                
-                /** 押金 */
-                var  deposit: Float?
-                
-                /** 库存 */
-                var  stockNum: Int?
-                
-                /** 付款方式 */
-                var  payMode: Int?
-                
-                /** 卖家 */
-                //public String lessorId;
-                var  vendor: UserDvo?
-                
-                var fileDvos:[FileDvo]?
-                
-                required init() {
-                    super.init()
-                }
-            }
+           
         }
     }
 }

@@ -14,7 +14,7 @@ import HandyJSON
 
 
 typealias failureBlock = (Int?,String)->Void
-typealias successBlock = (_ R: Result)->Void
+typealias successBlock<R> = (R)->Void
 
 
 class Result: HandyJSON {
@@ -33,13 +33,14 @@ class HLNetworkManager{
     //static let successStatusCode = 0
     
     
-    static func POST<R: Result>(querier: Querier,Result: R.Type) {
+    static func POST<R: Result>(querier: Querier<R>) {
+        print("url: \(BASEURL + querier.url) \nParms: \(querier.param)")
         Alamofire.request(BASEURL + querier.url, method: .post, parameters: querier.param,headers: querier.headers).responseJSON{ (response) in
             print("json: \(JSON(response.result.value ?? "josn 为空"))")
             switch response.result{
             case .success( _):
                 if let data = response.data {
-                    if let model =   Result.deserialize(from: String(data: data, encoding: .utf8)){
+                    if let model = R.deserialize(from: String(data: data, encoding: .utf8)){
                         if model.error == 0{
                             querier.success(model)
                             /// 如果token变化 就把token 及时更新

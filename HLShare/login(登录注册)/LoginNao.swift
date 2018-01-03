@@ -9,8 +9,8 @@
 import UIKit
 
 class LoginNao: Nao{
-    static func loginQuerier(_ userId: String,_ password: String) -> Querier {
-        let querier = Querier()
+    static func loginQuerier(_ userId: String,_ password: String) -> Querier<LoginDvo> {
+        let querier = Querier<LoginDvo>()
         querier.url = "/user/user!login"
         querier.param.updateValue(password, forKey: "password")
         querier.param.updateValue(userId, forKey: "userId")
@@ -18,8 +18,8 @@ class LoginNao: Nao{
     }
 }
 class LoginPresenter: Presenter {
-    func login(userId: String,password: String,success: @escaping successBlock,failure: @escaping failureBlock) {
-        execute(nao: LoginNao(), querier: LoginNao.loginQuerier(userId, password), Result: LoginDvo.self, success: success, failure: failure)
+    func login(userId: String,password: String,success: @escaping successBlock<LoginDvo>,failure: @escaping failureBlock) {
+        execute(nao: LoginNao(), querier: LoginNao.loginQuerier(userId, password), success: success, failure: failure)
     }
 }
 

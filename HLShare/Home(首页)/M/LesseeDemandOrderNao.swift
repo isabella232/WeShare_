@@ -9,7 +9,7 @@
 import UIKit
 
 
-//租方 订单
+//需求方 订单
 class LesseeDemandOrderNao: Nao{
     
     /// 卖家商品列表
@@ -21,17 +21,33 @@ class LesseeDemandOrderNao: Nao{
 //    }
 
     
-    /// 租方 订单列表
-    ///
+    /// 需求方 订单列表
     /// - Parameters:
-    /// - userId: 用户的用户名,空表示获取当前用户的需求列表，非空表示获取该指定用户发布的需求列表。
-    /// - extra: 1：获取当前用户关注用户的需求列表。2：获取当前用户好友的需求列表。10：获取所有相关用户的需求列表
-    /// - Returns:
-    static func getLesseeDemandOrderQuerier(_ userId: String = "",_ extra: Int = 10)-> Querier{
-        let querier = Querier()
+    /// - state: 订单状态   0-全部订单（默认） 1-活动订单 2-历史订单
+    static func getLesseeDemandOrderQuerier(_ state: Int = 0)-> Querier<ListLeaseOrdersResult>{
+        let querier = Querier<ListLeaseOrdersResult>()
         querier.url = "/lease/lessee/order"
-        querier.param.updateValue(userId, forKey: "userId")
-        querier.param.updateValue(extra, forKey: "extra")
+        querier.param.updateValue(state, forKey: "state")
+        return querier
+    }
+    
+    ///  提交订单-UI
+    /// - Parameter saleItemId: 待订购的销售项ID
+    static func getLesseeOrderInputQuerier(_ saleItemId: Int)-> Querier<Any>{
+        let querier = Querier<Any>()
+        querier.url = "/lease/lessee/order!input"
+        querier.param.updateValue(saleItemId, forKey: "saleItemId")
+        return querier
+    }
+    
+    ///  提交订单
+    /// - Parameter saleItemId: 待订购的销售项ID
+    /// - Parameter payMode: 付款方式。目前支持：1-预付款方式，2-后付款方式。客户端应当根据销售项允许的付款方式，对用户的选择进行限制。
+    static func getEditLesseeOrderQuerier(_ saleItemId: Int, _ payMode: Int) -> Querier<Any> {
+        let querier = Querier<Any>()
+        querier.url = "/lease/lessee/order!edit"
+        querier.param.updateValue(saleItemId, forKey: "saleItemId")
+        querier.param.updateValue(payMode, forKey: "payMode")
         return querier
     }
     
@@ -98,17 +114,25 @@ class LesseeDemandOrderNao: Nao{
 }
 class LesseeDemandOrderPresenter: Presenter {
     
-    /// <#Description#>
     override var nao: Nao?{return LesseeDemandOrderNao()}
     
-    
-    /// <#Description#>
-    override var querier: Querier?{return LesseeDemandOrderNao.getLesseeDemandOrderQuerier()}
-    
+//    override var querier: Querier?{return LesseeDemandOrderNao.getLesseeDemandOrderQuerier()}
     
     /// 租方 订单列表
-    func getLesseeDemandOrder(success: @escaping successBlock,failure:@escaping failureBlock) {
-        execute(  Result: DemandsResult.self, success: success, failure: failure)
+    func getLesseeDemandOrder(success: @escaping successBlock<ListLeaseOrdersResult>,failure:@escaping failureBlock) {
+        let q = LesseeDemandOrderNao.getLesseeDemandOrderQuerier()
+        execute(nao: nao!, querier: q, success: successBlock, failure: failureBlock)
+    }
+    
+    /// 提交订单的UI
+    func getLesseeOrderInput(saleItemId: Int, success: @escaping successBlock<LesseeOrderInputResult>,failure:@escaping failureBlock)  {
+//        execute(nao: nao!, querier: LesseeDemandOrderNao.getLesseeOrderInputQuerier(saleItemId), success: success, failure: failure)
+    }
+    
+    /// 用户填写完订单信息后，执行下单操作。
+    func editLesseeOrder(_ saleItemId: Int, _ payMode: Int, success: @escaping successBlock<Result>,failure:@escaping failureBlock) -> Void {
+//        execute(nao: nao!, querier: LesseeDemandOrderNao.getEditLesseeOrderQuerier(saleItemId,payMode), success: success, failure: failure)
+
     }
     
 //

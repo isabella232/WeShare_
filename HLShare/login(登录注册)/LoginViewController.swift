@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
     /// - Parameter sender: <#sender description#>
     @IBAction func userLogin(_ sender: UIButton) {
         presenter.login(userId: "aaaaaa", password: "111111", success: { (dvo) in
-            let model = dvo as! LoginDvo
+            
 //            EMClient.shared().login(withUsername:model.easemobUserName , password: model.easemobPassword, completion: { (userName, error) in
 //                if error != nil{
 //                    print("--------登录成功---------")

@@ -118,11 +118,68 @@
                     </navigationItem>
                     <connections>
                         <outlet property="homeTableView" destination="d5L-Xp-LeJ" id="FAn-2j-kyK"/>
+                        <segue destination="s8j-N6-ip3" kind="show" identifier="showInputLeseeOrder" id="b7o-qB-9nC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1567.2" y="335.98200899550227"/>
+            <point key="canvasLocation" x="1383" y="330"/>
+        </scene>
+        <!--Inputlesee Order Controller-->
+        <scene sceneID="y0J-9u-xpf">
+            <objects>
+                <viewController storyboardIdentifier="InputleseeOrderController" id="s8j-N6-ip3" customClass="InputleseeOrderController" customModule="HLShare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NL9-BG-14X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOJ-tp-Y4t">
+                                <rect key="frame" x="164" y="625" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="提交"/>
+                                <connections>
+                                    <action selector="editLesseeOrder:" destination="s8j-N6-ip3" eventType="touchUpInside" id="J1f-F6-u2E"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMq-Un-Ltg">
+                                <rect key="frame" x="0.0" y="87" width="375" height="588"/>
+                                <mutableString key="text">"state":"已生效",
+        "operations":128,
+        "name":"h的租借项标题修改",
+        "payMode":1,
+        "vendor":Object{...},
+        "place":"",
+        "modifyTime":"Nov 18, 2017 2:41:00 PM",
+        "fileDvos":Array[0],
+        "price":111,
+        "fromMe":0,
+        "content":"h的描述修改",
+        "latitude":31.2600640358,
+        "id":24,
+        "deposit":111,
+        "averageScore":0,
+        "longitude":121.612,
+        "stockNum":-1,
+        "operated":0,
+        "createTime":"Nov 18, 2017 2:40:25 PM"</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZMq-Un-Ltg" firstAttribute="trailing" secondItem="3PQ-OY-F8R" secondAttribute="trailing" id="O63-kN-PYl"/>
+                            <constraint firstItem="ZMq-Un-Ltg" firstAttribute="leading" secondItem="3PQ-OY-F8R" secondAttribute="leading" id="ShA-Od-9U4"/>
+                            <constraint firstItem="3PQ-OY-F8R" firstAttribute="bottom" secondItem="ZMq-Un-Ltg" secondAttribute="bottom" constant="79" id="vlc-OT-tnv"/>
+                            <constraint firstItem="ZMq-Un-Ltg" firstAttribute="top" secondItem="NL9-BG-14X" secondAttribute="top" id="vyy-TO-PpG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3PQ-OY-F8R"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Stk-a2-kND" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2242.4000000000001" y="335.98200899550227"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="6wt-yS-AnJ">
