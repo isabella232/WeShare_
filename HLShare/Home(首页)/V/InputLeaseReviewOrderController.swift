@@ -14,17 +14,12 @@ class InputLeaseReviewOrderController: UIViewController {
     @IBOutlet weak var descTextField: UITextField! // 描述
     @IBOutlet weak var scoreTextField: UITextField! // 评分
     
-    var presenter: LeaseReviewOrderPresneter{
-        var review = LeaseReviewOrderPresneter()
-        review.nao = LeaseReviewOrderNao.share
-        return review
-    }
+    var presenter =  LeaseReviewOrderPresneter()
+    
     var targetId: Int! // 订单的id
     
     @IBAction func done(_ sender: UIButton) {
-        
         presenter.execute(LeaseReviewOrderNao.reviewOrderQuerier(targetId, 2, score: Int(scoreTextField.text!)!, content: descTextField.text!))
-        
         
     }
     

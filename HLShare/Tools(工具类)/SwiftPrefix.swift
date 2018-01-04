@@ -91,7 +91,7 @@ func gf_Cancel(_ task: Task?) {
 
 // 验证码倒计时
 func g_verifyCode_timerSource(sender: UIButton,sceneId: String,mobile: String,interval: Int = 60)  {
-//    HLNetworkManager.POST(url: "", param: ["si":"01_0006","sceneId":sceneId,"mobile":mobile], success: { (data) in
+//    NetworkManager.POST(url: "", param: ["si":"01_0006","sceneId":sceneId,"mobile":mobile], success: { (data) in
 //        var timeCount = interval
 //        let timer = DispatchSource.makeTimerSource( queue:  DispatchQueue.global())
 //        timer.schedule(deadline: .now(), repeating: .seconds(1))

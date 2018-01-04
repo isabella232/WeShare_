@@ -51,5 +51,8 @@ class LeaseReviewOrderNao: Nao {
 
 // 评价订单
 class LeaseReviewOrderPresneter: Presenter {
-    
+    override init() {
+        super.init()
+        nao = LeaseReviewOrderNao.share
+    }
 }

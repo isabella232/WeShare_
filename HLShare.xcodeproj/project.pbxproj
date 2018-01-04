@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		062570421FECAEB70056FB8B /* HLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570411FECAEB70056FB8B /* HLNetworkManager.swift */; };
+		062570421FECAEB70056FB8B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570411FECAEB70056FB8B /* NetworkManager.swift */; };
 		062570451FECB5D90056FB8B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570441FECB5D90056FB8B /* LoginViewController.swift */; };
 		062570471FECB5EF0056FB8B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570461FECB5EF0056FB8B /* RegisterViewController.swift */; };
 		062570491FECD94F0056FB8B /* LoginDvo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570481FECD94F0056FB8B /* LoginDvo.swift */; };
@@ -38,6 +38,7 @@
 		0C052C352EC13281FF1E21D7 /* Pods_HLShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAE5C4A87618CB795CD183D /* Pods_HLShare.framework */; };
 		72484368733E239B13EA6158 /* Pods_HLShareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF5A33985ED3F2B3B50E392 /* Pods_HLShareTests.framework */; };
 		D4F40A92BB65346856C83206 /* Pods_HLShareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3267189919C1D99405A4265D /* Pods_HLShareUITests.framework */; };
+		EEF33B731FFE766D00022B0E /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF33B721FFE766D00022B0E /* Presenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		062570411FECAEB70056FB8B /* HLNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLNetworkManager.swift; sourceTree = "<group>"; };
+		062570411FECAEB70056FB8B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		062570441FECB5D90056FB8B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		062570461FECB5EF0056FB8B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		062570481FECD94F0056FB8B /* LoginDvo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDvo.swift; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 		92FCF699FDD251B7AD5ED615 /* Pods-HLShareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLShareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HLShareTests/Pods-HLShareTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B8D3D64532F21C479A4AE05C /* Pods-HLShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-HLShare/Pods-HLShare.release.xcconfig"; sourceTree = "<group>"; };
 		BB679D4A85B56E2669403AEC /* Pods-HLShareUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLShareUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HLShareUITests/Pods-HLShareUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EEF33B721FFE766D00022B0E /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		FCF8BFDBB03624B9EBEC53A8 /* Pods-HLShareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLShareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HLShareTests/Pods-HLShareTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,7 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				062D042F1FF64961001098B3 /* Nao.swift */,
-				062570411FECAEB70056FB8B /* HLNetworkManager.swift */,
+				EEF33B721FFE766D00022B0E /* Presenter.swift */,
+				062570411FECAEB70056FB8B /* NetworkManager.swift */,
 			);
 			path = NAO;
 			sourceTree = "<group>";
@@ -618,10 +621,11 @@
 				06EDEDB51FFCC03700124DEF /* config.swift in Sources */,
 				062570511FECFA320056FB8B /* Dvo.swift in Sources */,
 				06847AC31FFDED3500DBFD87 /* StringTool.swift in Sources */,
-				062570421FECAEB70056FB8B /* HLNetworkManager.swift in Sources */,
+				062570421FECAEB70056FB8B /* NetworkManager.swift in Sources */,
 				06EDEDB11FFC63DE00124DEF /* ListLeaseOrdersResult.swift in Sources */,
 				0634FFED1FF2400100FA4980 /* HomeTableViewCell.swift in Sources */,
 				06D837771FF0DED70037628C /* SwiftPrefix.swift in Sources */,
+				EEF33B731FFE766D00022B0E /* Presenter.swift in Sources */,
 				062570491FECD94F0056FB8B /* LoginDvo.swift in Sources */,
 				06A15D0E1FEB9AF700D7DCB5 /* AppDelegate.swift in Sources */,
 				06D837791FF0E5810037628C /* DemandsResultDvo.swift in Sources */,

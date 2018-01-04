@@ -23,15 +23,14 @@ class LoginViewController: UIViewController {
     ///
     /// - Parameter sender: <#sender description#>
     @IBAction func userLogin(_ sender: UIButton) {
-        presenter.login(userId: "aaaaaa", password: "111111", success: { (dvo) in
-            
-//            EMClient.shared().login(withUsername:model.easemobUserName , password: model.easemobPassword, completion: { (userName, error) in
-//                if error != nil{
-//                    print("--------登录成功---------")
-//                }else{
-//                    print("--------登录失败---------")
-//                }
-//            })
+        presenter.execute(LoginNao.loginQuerier("aaaaaa", "111111"), success: { (result) in
+            //            EMClient.shared().login(withUsername:model.easemobUserName , password: model.easemobPassword, completion: { (userName, error) in
+            //                if error != nil{
+            //                    print("--------登录成功---------")
+            //                }else{
+            //                    print("--------登录失败---------")
+            //                }
+            //            })
             UIApplication.shared.keyWindow?.rootViewController =  self.storyboard?.instantiateViewController(withIdentifier: "MainTabbar")
         }) { (code, msg) in
             

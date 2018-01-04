@@ -11,24 +11,23 @@ import UIKit
 class InputleseeOrderController: UIViewController {
 
     var saleItemId: Int? = nil
-    var presenter: LesseeOrderPresenter? = nil
+    var presenter = LesseeOrderPresenter()
     var model: LesseeOrderInputResult? = nil
     @IBAction func editLesseeOrder(_ sender: UIButton) {
         
-        presenter?.editLesseeOrder(model!.saleItem!.id!, model!.saleItem!.payMode!, success: { (result) in
-            
-        }, failure: { (code, msg) in
-            
-        })
+        presenter.execute(LesseeOrderNao.getEditLesseeOrderQuerier(model!.saleItem!.id!, model!.saleItem!.payMode!))
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.getLesseeOrderInput(saleItemId: saleItemId!, success: {[unowned self] (dvo) in
+        
+        presenter.execute(LesseeOrderNao.getLesseeOrderInputQuerier(saleItemId!), success: { (result) in
             
-        }, failure: { (code, msg) in
+        }) { (code, msg) in
             
-        })
+        }
+       
        
     }
 

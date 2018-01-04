@@ -18,8 +18,10 @@ class LoginNao: Nao{
     }
 }
 class LoginPresenter: Presenter {
-    func login(userId: String,password: String,success: @escaping successBlock<LoginDvo>,failure: @escaping failureBlock) {
-        execute(nao: LoginNao(), querier: LoginNao.loginQuerier(userId, password), success: success, failure: failure)
+    override init() {
+        super.init()
+        nao = LoginNao()
     }
+
 }
 

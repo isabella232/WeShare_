@@ -27,7 +27,7 @@ class Result: HandyJSON {
 
 
 
-class HLNetworkManager{
+class NetworkManager{
  
     /// 网络请求成功的状态码
     //static let successStatusCode = 0

@@ -13,53 +13,14 @@ import UIKit
 var app_request_token: String?
 
 
-class Presenter {
-    
-    var nao: Nao? = nil
-    
-    /// 执行 不需要指定 nao
-    ///
-    /// - Parameters:
-    ///   - querier: 参数集
-    func execute<R: Result>(nao: Nao, querier: Querier<R>, success: @escaping successBlock<R>, failure: @escaping failureBlock){
-        querier.success = success
-        querier.failure = failure
-        nao.excute(querier: querier)
-    }
-    
-    
-    /// 执行 不需要指定 nao
-    ///
-    /// - Parameters:
-    ///   - querier: 参数集
-    func execute<R: Result>(_ querier: Querier<R>, success: @escaping successBlock<R>, failure: @escaping failureBlock) {
-        execute(nao: nao!, querier: querier, success: success, failure: failure)
-    }
-    
-    /// 统一处理
-    /// 基类里面处理 callback
-    ///
-    /// - Parameter querier: 参数集
-    func execute<R: Result>(_ querier: Querier<R>) {
-        
-        execute(nao: nao!, querier: querier, success: { (result) in
-            if let desc =  querier.desc{
-                print("操作成功: \(desc)........")
-            }
-        }) { (code, msg) in
-            
-            print("操作失败........")
 
-        }
-    }
-    
-}
 
 class Nao{
     
     var baseUrl = ""
     var baseParam = [String: Any]()
     var showMsg = ""
+    
     func processQuerier<R>(querier: Querier<R>) -> Querier<R> {
         
         querier.url = baseUrl + querier.url
@@ -71,16 +32,25 @@ class Nao{
         for (key,value) in baseParam{
             querier.param.updateValue(value, forKey: key)
         }
+        
+        if let pager = querier.pager {
+            querier.param.updateValue(pager.page, forKey: "pager.page")
+            if pager.pageSize > 0 {querier.param.updateValue(pager.pageSize, forKey: "pager.pageSize")}
+            if pager.pad != 0 {querier.param.updateValue(pager.pad, forKey: "pager.pad")}
+        }
 
         return querier
     }
     
     func excute<R: Result>(querier: Querier<R>) {
-        HLNetworkManager.POST(querier: processQuerier(querier: querier))
+        NetworkManager.POST(querier: processQuerier(querier: querier))
     }
     
 }
 
+class DeleteNao: Nao {
+    
+}
 
 
 class Querier<R> {
@@ -96,6 +66,50 @@ class Querier<R> {
     var success: successBlock<R>!
     
     var failure: failureBlock!
+    
+    var pager: Pager?
+   
+   
+    
+}
+
+/**
+ * 分页器
+ * @author BraveLu
+ */
+class Pager {
+    /** 页码 */
+    var page : Int = 0
+    /** 每页长度。0将被忽略。 */
+    var pageSize : Int = 0
+    /** 填充量，表示待获取记录之前实际被删除的元素数目 */
+    var pad : Int = 0
+    
+    init() {}
+    init(_ page : Int) {
+        self.page = page;
+    }
+    init(_ page : Int , _ pageSize : Int) {
+        self.page = page;
+        self.pageSize = pageSize;
+    }
+    /**
+     * 增加一页
+     * @return
+     */
+    func increase() -> Int {
+        page += 1
+        return page
+    }
+    /**
+     * 填充到参数集中
+     * @param params 参数集
+     */
+    func fill(_ params : inout [String: Any]) {
+        params["pager.page"] = page
+        if (pageSize > 0) { params["pager.pageSize"] = pageSize }
+        if (pad != 0) { params["pager.pad"] = pad }
+    }
     
 }
 

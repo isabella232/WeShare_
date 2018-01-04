@@ -86,7 +86,7 @@ class LesseeOrderNao: Nao {
         baseUrl = "/lease/lessee/order"
 
     }
-
+    static let share = LesseeOrderNao()
     
     /// 需求方 订单列表
     /// - Parameters:
@@ -97,8 +97,8 @@ class LesseeOrderNao: Nao {
         return querier
     }
     
-    //    ///  提交订单-UI
-    //    /// - Parameter saleItemId: 待订购的销售项ID
+    ///  提交订单-UI
+    /// - Parameter saleItemId: 待订购的销售项ID
     static func getLesseeOrderInputQuerier(_ saleItemId: Int)-> Querier<LesseeOrderInputResult>{
         let querier = Querier<LesseeOrderInputResult>()
         querier.url = "!input"
@@ -123,28 +123,11 @@ class LesseeOrderPresenter: Presenter {
     
     override init() {
         super.init()
-        nao = LesseeOrderNao()
-    }
-    /// 租方 订单列表
-    func getLesseeDemandOrder(success: @escaping successBlock<ListLeaseOrdersResult>,failure:@escaping failureBlock) {
-        execute(nao: nao!, querier: LesseeOrderNao.getLesseeOrderQuerier(), success: success, failure: failure)
+        nao = LesseeOrderNao.share
     }
     
     
-    /// 提交订单的UI
-    func getLesseeOrderInput(saleItemId: Int, success: @escaping successBlock<LesseeOrderInputResult>,failure:@escaping failureBlock)  {
-        execute(nao: nao!, querier: LesseeOrderNao.getLesseeOrderInputQuerier(saleItemId), success: success, failure: failure)
-    }
-    
-    /// 用户填写完订单信息后，执行下单操作。
-    func editLesseeOrder(_ saleItemId: Int, _ payMode: Int, success: @escaping successBlock<Result>,failure:@escaping failureBlock) -> Void {
-        execute(nao: nao!, querier: LesseeOrderNao.getEditLesseeOrderQuerier(saleItemId,payMode), success: success, failure: failure)
-    }
-    
-    
-    class aaaa: Presenter {
-        
-    }
+
     
     
     
