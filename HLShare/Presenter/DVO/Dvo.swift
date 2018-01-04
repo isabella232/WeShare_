@@ -104,14 +104,24 @@ class Dvo: Result {
         return ((Business.OP_REPORT & operated!) != 0);
     }
     
-    /** 能否下单 */
-    func canOrder() ->Bool{
-        return ((Business.OP_CREATE_RELATED & operations!) != 0);
+    /** 能否付款 */
+    func canPay() ->Bool{
+        return ((Business.OP_ORDER_PAY & operations!) != 0);
     }
     
     /** 能否投标 */
     func canTender() ->Bool{
         return ((Business.OP_CREATE_RELATED & operations!) != 0);
+    }
+    
+    /** 能否取消 */
+    func canCancel() -> Bool {
+        return ((Business.OP_CANCEL & operations!) != 0);
+    }
+    
+    /** 能否开始使用 */
+    func canUser() -> Bool {
+        return ((Business.OP_ORDER_BEGIN & operations!) != 0);
     }
 }
 

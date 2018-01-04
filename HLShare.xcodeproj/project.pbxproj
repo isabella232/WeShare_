@@ -17,7 +17,10 @@
 		062E6FED1FF3750700EC92F2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062E6FEC1FF3750700EC92F2 /* BaseViewController.swift */; };
 		0634FFED1FF2400100FA4980 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0634FFEC1FF2400100FA4980 /* HomeTableViewCell.swift */; };
 		0668C9941FECAC9D002AA541 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0668C9931FECAC9D002AA541 /* HomeViewController.swift */; };
-		068140D41FF4839800705244 /* LesseeDemandOrderNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068140D31FF4839800705244 /* LesseeDemandOrderNao.swift */; };
+		068140D41FF4839800705244 /* LesseeOrderNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068140D31FF4839800705244 /* LesseeOrderNao.swift */; };
+		06847AC31FFDED3500DBFD87 /* StringTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06847AC21FFDED3500DBFD87 /* StringTool.swift */; };
+		06847AC51FFE024F00DBFD87 /* LeaseReviewOrderNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06847AC41FFE024F00DBFD87 /* LeaseReviewOrderNao.swift */; };
+		06847AC71FFE07FF00DBFD87 /* InputLeaseReviewOrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06847AC61FFE07FF00DBFD87 /* InputLeaseReviewOrderController.swift */; };
 		06A15D0E1FEB9AF700D7DCB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A15D0D1FEB9AF700D7DCB5 /* AppDelegate.swift */; };
 		06A15D131FEB9AF700D7DCB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A15D111FEB9AF700D7DCB5 /* Main.storyboard */; };
 		06A15D161FEB9AF700D7DCB5 /* HLShare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06A15D141FEB9AF700D7DCB5 /* HLShare.xcdatamodeld */; };
@@ -65,10 +68,13 @@
 		062E6FEC1FF3750700EC92F2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0634FFEC1FF2400100FA4980 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		0668C9931FECAC9D002AA541 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		068140D31FF4839800705244 /* LesseeDemandOrderNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LesseeDemandOrderNao.swift; sourceTree = "<group>"; };
+		068140D31FF4839800705244 /* LesseeOrderNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LesseeOrderNao.swift; sourceTree = "<group>"; };
 		068140D51FF49B5E00705244 /* HLShare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HLShare-Bridging-Header.h"; sourceTree = "<group>"; };
 		068140DD1FF4C06000705244 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		068140DE1FF4C06000705244 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		06847AC21FFDED3500DBFD87 /* StringTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTool.swift; sourceTree = "<group>"; };
+		06847AC41FFE024F00DBFD87 /* LeaseReviewOrderNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaseReviewOrderNao.swift; sourceTree = "<group>"; };
+		06847AC61FFE07FF00DBFD87 /* InputLeaseReviewOrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLeaseReviewOrderController.swift; sourceTree = "<group>"; };
 		06A15D0A1FEB9AF700D7DCB5 /* HLShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HLShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06A15D0D1FEB9AF700D7DCB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06A15D121FEB9AF700D7DCB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -196,6 +202,7 @@
 				06D837761FF0DED70037628C /* SwiftPrefix.swift */,
 				06D837741FF0DE330037628C /* SwiftNotice.swift */,
 				062E6FEC1FF3750700EC92F2 /* BaseViewController.swift */,
+				06847AC21FFDED3500DBFD87 /* StringTool.swift */,
 			);
 			path = "Tools(工具类)";
 			sourceTree = "<group>";
@@ -257,7 +264,8 @@
 			children = (
 				06D837781FF0E5810037628C /* DemandsResultDvo.swift */,
 				06EDEDB01FFC63DE00124DEF /* ListLeaseOrdersResult.swift */,
-				068140D31FF4839800705244 /* LesseeDemandOrderNao.swift */,
+				068140D31FF4839800705244 /* LesseeOrderNao.swift */,
+				06847AC41FFE024F00DBFD87 /* LeaseReviewOrderNao.swift */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -267,6 +275,7 @@
 			children = (
 				0668C9931FECAC9D002AA541 /* HomeViewController.swift */,
 				06EDEDB21FFC7DA900124DEF /* InputleseeOrderController.swift */,
+				06847AC61FFE07FF00DBFD87 /* InputLeaseReviewOrderController.swift */,
 				0634FFEC1FF2400100FA4980 /* HomeTableViewCell.swift */,
 			);
 			path = V;
@@ -605,8 +614,10 @@
 			files = (
 				062E6FEB1FF35CBB00EC92F2 /* LoginNao.swift in Sources */,
 				062E6FED1FF3750700EC92F2 /* BaseViewController.swift in Sources */,
+				06847AC51FFE024F00DBFD87 /* LeaseReviewOrderNao.swift in Sources */,
 				06EDEDB51FFCC03700124DEF /* config.swift in Sources */,
 				062570511FECFA320056FB8B /* Dvo.swift in Sources */,
+				06847AC31FFDED3500DBFD87 /* StringTool.swift in Sources */,
 				062570421FECAEB70056FB8B /* HLNetworkManager.swift in Sources */,
 				06EDEDB11FFC63DE00124DEF /* ListLeaseOrdersResult.swift in Sources */,
 				0634FFED1FF2400100FA4980 /* HomeTableViewCell.swift in Sources */,
@@ -621,7 +632,8 @@
 				06D837751FF0DE330037628C /* SwiftNotice.swift in Sources */,
 				0668C9941FECAC9D002AA541 /* HomeViewController.swift in Sources */,
 				062D04301FF64961001098B3 /* Nao.swift in Sources */,
-				068140D41FF4839800705244 /* LesseeDemandOrderNao.swift in Sources */,
+				06847AC71FFE07FF00DBFD87 /* InputLeaseReviewOrderController.swift in Sources */,
+				068140D41FF4839800705244 /* LesseeOrderNao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

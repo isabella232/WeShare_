@@ -11,7 +11,7 @@ import HandyJSON
 class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     // 租方订单列表
-    var presenter = LesseeDemandOrderPresenter()
+    var presenter = LesseeOrderPresenter()
 
     /// 列表
     @IBOutlet weak var homeTableView: UITableView!
@@ -52,13 +52,10 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.homeTableView.rowHeight = 500
+        self.homeTableView.rowHeight = 300
         
         presenter.getLesseeDemandOrder(success: {[unowned self] (dvo) in
-            let demands =  dvo as! ListLeaseOrdersResult
-            self.demandsModel = demands
-            
-            
+            self.demandsModel = dvo
             self.homeTableView.reloadData()
         }) { (code, msg) in
             
@@ -91,34 +88,25 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! HomeTableViewCell
-        
         if let model = self.demandsModel {
-  
-            cell.contentLabel.text =
-            """
-            print(" state: \(model.orders![indexPath.row].state)")
-            print(" name: \(model.orders![indexPath.row].name)")
-            print(" name: \(model.orders![indexPath.row].vendor?.name)")
-            
-            """
-            
-            
-            
+            let order = model.orders![indexPath.row]
+            cell.order = order
+            cell.nav = navigationController
         }
-
-       
+        
+        
         return cell
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let orders = self.demandsModel!.orders {
-            let saleItemId = orders[indexPath.row].item!.saleItem!.id!
-            let input = self.storyboard?.instantiateViewController(withIdentifier: "InputleseeOrderController") as! InputleseeOrderController
-            input.saleItemId = saleItemId
-            input.presenter = presenter
-            input.hidesBottomBarWhenPushed = true
-            navigationController?.pushViewController(input, animated: true)
-        }
+//        if let orders = self.demandsModel!.orders {
+//            let saleItemId = orders[indexPath.row].item!.saleItem!.id!
+//            let input = self.storyboard?.instantiateViewController(withIdentifier: "InputleseeOrderController") as! InputleseeOrderController
+//            input.saleItemId = saleItemId
+//            input.presenter = presenter
+//            input.hidesBottomBarWhenPushed = true
+//            navigationController?.pushViewController(input, animated: true)
+//        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
