@@ -13,10 +13,7 @@ import UIKit
 var app_request_token: String?
 
 
-
-
 class Nao{
-    
     var baseUrl = ""
     var baseParam = [String: Any]()
     var showMsg = ""
@@ -46,11 +43,11 @@ class Nao{
         NetworkManager.POST(querier: processQuerier(querier: querier))
     }
     
-}
-
-class DeleteNao: Nao {
+    
+    
     
 }
+
 
 
 class Querier<R> {
@@ -69,8 +66,6 @@ class Querier<R> {
     
     var pager: Pager?
    
-   
-    
 }
 
 /**
@@ -112,16 +107,6 @@ class Pager {
     }
     
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

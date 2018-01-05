@@ -7,6 +7,13 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
+import HandyJSON
+
+protocol PJsonParser {
+    func parseJson(_ json : String) -> Any?
+}
 
 protocol PListener {
 	associatedtype R
@@ -24,12 +31,8 @@ class /* should be struct? */ IListener<R> : PListener {
 		m_fnOnResponse=delegatee.onResponse
 		m_fnOnError=delegatee.onError
 	}
-	func onResponse(_ response : R , _ querier : Querier<R>?) -> Void {
-		return m_fnOnResponse(response , querier)
-	}
-	func onError(_ error : Int, _ msg : String ,  _ querier : Querier<R>?) -> Void {
-		return m_fnOnError(error, msg , querier)
-	}
+	func onResponse(_ response : R , _ querier : Querier<R>?) -> Void {return m_fnOnResponse(response , querier)}
+	func onError(_ error : Int, _ msg : String ,  _ querier : Querier<R>?) -> Void {return m_fnOnError(error, msg , querier)}
 }
 
 class Communicator<R> {
@@ -53,19 +56,63 @@ class Communicator<R> {
 //		return 0;
 //	}
 	var querier : Querier<R>? = nil
+    //var clazz = Result.self
+    var jsonParser : PJsonParser? = nil
+    
 	func send(_ querier : Querier<R>) -> Int {
 		self.querier = querier
 		print("准备发送操作数据：URL=\(querier.url)，参数=\(querier.params)");
-		//var response : R? = nil
-		//var response : R? = ListLeaseOrdersResult() as! R
-		var response : R?
-		if (querier.presenter?.pid == Business.OP_LIST) {response = ListLeaseOrdersResult() as! R}
-		else {response = Result() as! R}
-		//let c = type(of:R.self)
-		//print("\(c)")
-		//let x = R.init()
-		return onResponse(response);
-	}
+//        //var response : R? = nil
+//        //var response : R? = ListLeaseOrdersResult() as! R
+//        var response : R?
+//        if (querier.presenter?.pid == Business.OP_LIST) {response = ListLeaseOrdersResult() as! R}
+//        else if (querier.operation == Business.OP_INPUT) {response = OrderResult() as! R}
+//        else if (querier.operation == Business.OP_DELETE) {response = DeleteOrderResult() as! R}
+//        else {response = Result() as! R}
+//        //let c = type(of:R.self)
+//        //print("\(c)")
+//        //let x = R.init()
+//        return onResponse(response);
+        print("url: \(BASEURL + querier.url) \nParms: \(querier.params)")
+        Alamofire.request(BASEURL + querier.url, method: .post, parameters: querier.params,headers: querier.headers).responseJSON{ (response) in
+            print("json: \(JSON(response.result.value ?? "josn 为空"))")
+            var r : R? = nil
+            switch response.result{
+            case .success( _):
+                if let data = response.data {
+                    
+                    //var RS = R.self as! Result.Type
+                    
+//                    if let model = RS.deserialize(from: String(data: data, encoding: .utf8)){
+//                        if model.error == 0{
+//                            querier.fnOnResponse!(model as! R, querier)
+//                            /// 如果token变化 就把token 及时更新
+//                            if let token = model.token{app_request_token = token}
+//                        }else{
+//                            print("----------Handle Json  处理失败---------")
+//                            querier.failure(400,"--------请求失败-----------")
+//                        }
+//                    }else{
+//                        print("----------Handle Json  处理失败---------")
+//                        querier.failure(100,"----------Handle Json  处理失败---------")
+//                    }
+                    
+//                    r = self.clazz.deserialize(from: String(data: data, encoding: .utf8)) as! R
+                    r = self.jsonParser?.parseJson(String(data: data, encoding: .utf8)!) as! R
+                    //print(r)
+                }else{
+                    print("----------data  nil---------")
+//                    querier.failure(200,"----------data  nil---------")
+                }
+            case .failure(let  error):
+                print("----------网络故障: \(error.localizedDescription)--------")
+                //querier.failure(300,"----------网络故障--------")
+            }
+            self.onResponse(r)
+        }
+        return 0
+    }
+    
 	func getResult(_ response : R?) -> Result? {
 		if (response is Result) {
 			return response as? Result
@@ -144,6 +191,7 @@ class Pager {
 class Querier<R> {
 	/** 操作的URL */
 	var url : String = ""
+    var headers : [String : String]?
 	/** 标志 */
 	var flags : Int = 0
 	/** 监听器/回调 */
@@ -185,11 +233,29 @@ class Querier<R> {
 	}
 }
 
+/**
+* 查询器加工器
+* @param <R>
+* @author BraveLu
+*/
+protocol PQuerierProcessor {
+	associatedtype R
+	/** 对查询器进行加工 */
+	func processQuerier(_ querier : Querier<R>) -> Querier<R>
+}
+
+/** 查询器加工器 */
+class IQuerierProcessor<R> : PQuerierProcessor {
+	let m_fnProcessQuerier : (Querier<R>) -> Querier<R>
+	init<D: PQuerierProcessor>(_ delegatee: D) where D.R == R {m_fnProcessQuerier=delegatee.processQuerier}
+	func processQuerier(_ querier : Querier<R>) -> Querier<R> {return m_fnProcessQuerier(querier)}
+}
+
 class BaseCommunicator<R> : Communicator<R> {
 	override func onResponse(_ response : R?) -> Int {
 		if response is Result {
 			let result = response as! Result
-			if result.token != "" {Config.saveToken(result.token)}
+            if let token = result.token { if token != "" {Config.saveToken(token)} }
 		}
 		return super.onResponse(response)
 	}

@@ -8,12 +8,28 @@
 
 import UIKit
 
+protocol ListLeaseOrdersProtocol: NSObjectProtocol {
+    func leaseOrderOperation(operation: OrderOperation,order: ListLeaseOrdersResult.LeaseOrderDvo,_ cell: UITableViewCell)
+}
+
+enum OrderOperation {
+    case lookupDetails
+    case lookupVendor
+    case lookupBuyer
+    case pay
+    case cancel
+    case review
+    case startUse
+}
 class HomeTableViewCell: UITableViewCell,UITextViewDelegate {
+    
+    
 
     @IBOutlet weak var contentTextView: UITextView!
     
-   
     var nav: UINavigationController!
+    
+    weak var delegate: ListLeaseOrdersProtocol?
     
     override func awakeFromNib() {
         selectionStyle = .none
@@ -45,7 +61,7 @@ class HomeTableViewCell: UITableViewCell,UITextViewDelegate {
             应付: \(order.due)
             实付: \(order.paid)
             状态: \(order.state!)
-            操作: \(order.canPay() ? " 付款 " : "")  \(order.canCancel() ? " 取消 " : "")  \(!order.canReview() ? "| 评价 " : "") \(order.canUser() ? "开始使用 " : "")
+            操作: \(order.canPay() ? " 付款 " : "")  \(order.canCancel() ? " 取消 " : "已取消")  \(order.item!.canReview() ? "| 评价 " : "") \(order.canUser() ? "开始使用 " : "")
             """
             contentTextView.attributedText = link(str: str, subs: ["详情"," 付款 "," 取消 "," 评价 ","开始使用",order.vendor!.name ?? order.vendor!.mobile ?? "无名",order.buyer!.name ?? "未知"])
         }
@@ -58,39 +74,43 @@ class HomeTableViewCell: UITableViewCell,UITextViewDelegate {
         let end = textView.text.index(textView.text.startIndex, offsetBy: characterRange.location + characterRange.length)
         if textView.text[start..<end] == "详情" {
             print("------详情---------")
+            delegate?.leaseOrderOperation(operation: .lookupDetails,order: order, self)
+
         }
         
         if  textView.text[start..<end] == " 付款 " {
             print("------付款---------")
+            delegate?.leaseOrderOperation(operation: .pay,order: order, self)
 
         }
         if  textView.text[start..<end]  == " 取消 " {
             print("------取消---------")
-
+            delegate?.leaseOrderOperation(operation: .cancel,order: order, self)
         }
         if  textView.text[start..<end]  == " 评价 " {
             print("------评价---------")
-            
-            let input = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InputLeaseReviewOrderController") as! InputLeaseReviewOrderController
-            input.hidesBottomBarWhenPushed = true
-            input.targetId = order.id!
-            nav.pushViewController(input, animated: true)
+            delegate?.leaseOrderOperation(operation: .review,order: order, self)
         }
         
         if  textView.text[start..<end]  == "开始使用" {
             print("------开始使用---------")
+            delegate?.leaseOrderOperation(operation: .startUse,order: order, self)
         }
         
         if  String(textView.text[start..<end])  == order.vendor!.name {
             print("------供方 姓名---------")
+            delegate?.leaseOrderOperation(operation: .lookupVendor,order: order, self)
         }
         
         if  String(textView.text[start..<end])  == order.vendor!.mobile {
             print("------供方 手机---------")
+            delegate?.leaseOrderOperation(operation: .lookupVendor,order: order, self)
+
         }
         
         if  String(textView.text[start..<end])  == order.buyer!.name {
             print("------需方姓名---------")
+            delegate?.leaseOrderOperation(operation: .lookupBuyer,order: order, self)
         }
         return false
     }

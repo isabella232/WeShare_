@@ -8,26 +8,26 @@
 
 import UIKit
 
-class InputleseeOrderController: UIViewController {
+class InputleseeOrderController: ComboView<Result, Result, Result> {
 
     var saleItemId: Int? = nil
-    var presenter = LesseeOrderPresenter()
+    var presenter = EditOrderPresenter()
     var model: LesseeOrderInputResult? = nil
     @IBAction func editLesseeOrder(_ sender: UIButton) {
         
-        presenter.execute(LesseeOrderNao.getEditLesseeOrderQuerier(model!.saleItem!.id!, model!.saleItem!.payMode!))
-        
+//        presenter.execute(LesseeOrderNao.getEditLesseeOrderQuerier(model!.saleItem!.id!, model!.saleItem!.payMode!))
+        onCmdEdit()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter.execute(LesseeOrderNao.getLesseeOrderInputQuerier(saleItemId!), success: { (result) in
-            
-        }) { (code, msg) in
-            
-        }
-       
+//        presenter.execute(LesseeOrderNao.getLesseeOrderInputQuerier(saleItemId!), success: { (result) in
+//
+//        }) { (code, msg) in
+//
+//        }
+        onCmdInput()
        
     }
 
@@ -35,16 +35,5 @@ class InputleseeOrderController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

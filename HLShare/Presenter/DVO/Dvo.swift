@@ -212,8 +212,8 @@ class Business {
     static let OP_DELETE = 0x0010
     /** 取消 */
     static let OP_CANCEL = 0x0020
-    /** 评价 */
-    static let OP_REVIEW = 0x0040
+    /**  */
+    static let OP_INPUT = 0x0040
     /** 创建关联实体 */
     static let OP_CREATE_RELATED = 0x0080
     
@@ -224,6 +224,7 @@ class Business {
     static let OP_REPLY = 0x0200
     /** 收藏 */
     static let OP_FAVOR = 0x0400
+    static let OP_REVIEW = 0x0800
     /** 举报 */
     static let OP_REPORT = 0x1000
     /** 审核 */
