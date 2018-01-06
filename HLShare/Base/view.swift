@@ -45,5 +45,3 @@ class OpViewEx<R> : PListener {
 	/** 操作名称 */
 	var operationName : String {return ""}
 }
-
-

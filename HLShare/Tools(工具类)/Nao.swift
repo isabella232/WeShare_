@@ -12,49 +12,72 @@ import UIKit
 /// 全局变量  登录的token
 var app_request_token: String?
 
+enum OrderOperation: String {
+    
+    case input          = "!input"
+    case edit           = "!edit"
+    case delete         = "!delete"
+    case report //举报
+    case censor //审核
+    case lookupDetails
+    case lookupVendor
+    case lookupBuyer
+    case pay
+    case cancel
+    case review
+    case startUse
+}
 
-class Nao{
+//protocol ProcessQuerier {
+//    associatedtype R: Result
+//    func processQuerier<R>(querier: GQuerier<R>) -> GQuerier<R>
+//}
+
+class GNao{
     var baseUrl = ""
     var baseParam = [String: Any]()
     var showMsg = ""
     
-    func processQuerier<R>(querier: Querier<R>) -> Querier<R> {
+    init(url: String) {self.baseUrl = url}
+    
+    func processQuerier<R>(querier: GQuerier<R>) -> GQuerier<R> {
         
         querier.url = baseUrl + querier.url
         
         if let t = app_request_token {
-            querier.param.updateValue(t, forKey: "token")
+            querier.params.updateValue(t, forKey: "token")
         }
         
         for (key,value) in baseParam{
-            querier.param.updateValue(value, forKey: key)
+            querier.params.updateValue(value, forKey: key)
         }
         
         if let pager = querier.pager {
-            querier.param.updateValue(pager.page, forKey: "pager.page")
-            if pager.pageSize > 0 {querier.param.updateValue(pager.pageSize, forKey: "pager.pageSize")}
-            if pager.pad != 0 {querier.param.updateValue(pager.pad, forKey: "pager.pad")}
+            querier.params.updateValue(pager.page, forKey: "pager.page")
+            if pager.pageSize > 0 {querier.params.updateValue(pager.pageSize, forKey: "pager.pageSize")}
+            if pager.pad != 0 {querier.params.updateValue(pager.pad, forKey: "pager.pad")}
         }
 
         return querier
     }
     
-    func excute<R: Result>(querier: Querier<R>) {
+    func execute<R: Result>(querier: GQuerier<R>, success:@escaping successBlock<R>, failure: @escaping failureBlock)  {
+        querier.success = success
+        querier.failure = failure
         NetworkManager.POST(querier: processQuerier(querier: querier))
     }
     
-    
-    
+
     
 }
 
 
 
-class Querier<R> {
+class GQuerier<R> {
     
     var url: String = ""
     
-    var param: [String: Any] =  ["silent": "true"]
+    var params: [String: Any] =  ["silent": "true"]
     
     var headers: [String: String]? = nil
     
@@ -64,15 +87,22 @@ class Querier<R> {
     
     var failure: failureBlock!
     
-    var pager: Pager?
+    var pager: GPager?
+    
+    init(operate: OrderOperation) {
+        url = operate.rawValue
+    }
    
+    init(url: String) {
+        self.url = url
+    }
 }
 
 /**
  * 分页器
  * @author BraveLu
  */
-class Pager {
+class GPager {
     /** 页码 */
     var page : Int = 0
     /** 每页长度。0将被忽略。 */

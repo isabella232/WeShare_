@@ -73,8 +73,8 @@ class Communicator<R> {
 //        //print("\(c)")
 //        //let x = R.init()
 //        return onResponse(response);
-        print("url: \(BASEURL + querier.url) \nParms: \(querier.params)")
-        Alamofire.request(BASEURL + querier.url, method: .post, parameters: querier.params,headers: querier.headers).responseJSON{ (response) in
+        print("url: \(querier.url) \nParms: \(querier.params)")
+        Alamofire.request(querier.url, method: .post, parameters: querier.params,headers: querier.headers).responseJSON{ (response) in
             print("json: \(JSON(response.result.value ?? "josn 为空"))")
             var r : R? = nil
             switch response.result{
@@ -127,7 +127,7 @@ class Communicator<R> {
 				else {querier?.fnOnResponse!(response!, querier)}
 			} else {//operation error
 				error = result.error
-				msg = result.desc
+                if let desc = result.desc {msg = desc}
 			}
 		} else {//communication error
 			error = -1
@@ -194,6 +194,8 @@ class Querier<R> {
     var headers : [String : String]?
 	/** 标志 */
 	var flags : Int = 0
+    var success: successBlock<R>!
+    var failure: failureBlock!
 	/** 监听器/回调 */
 	var listener : IListener<R>? = nil
 	
@@ -203,13 +205,7 @@ class Querier<R> {
 	/** 参数集 */
 	//var params : Dictionary<String , Any>? = nil
 	lazy var params = [String: Any]()
-//	func obtainParams() -> [String : Any] {
-//		if (params==nil) {
-//			//params = Dictionary<String , Any>()
-//			params = [String: Any]()
-//		}
-//		return params!
-//	}
+
 	/** 分页器 */
 	var pager : Pager? = nil
 	

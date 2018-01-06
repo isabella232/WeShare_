@@ -19,24 +19,22 @@ class OrderView : ComboView<Result, ListLeaseOrdersResult, Result> {
 	func onCmdFavor() {
 //		let o : OperationPresenter<Result>? = comboPresenter?.findOperationPresenter(Business.OP_FAVOR)
 //		o?.operate(id, IListener(simpleOpView!))
-		doCmdOperate(Business.OP_FAVOR)
+		operate(Business.OP_FAVOR)
 	}
 	/** 评价 */
 	func onCmdReview() {
-		doCmdOperate(Business.OP_REVIEW)
+		operate(Business.OP_REVIEW)
 	}
 	/** callback for common operations */
-	override func simpleOperate<T>(_ response: T, _ querier: Querier<T>?) {
+	override func onOperated<T>(_ response: T, _ querier: Querier<T>?) {
 		switch querier!.operation {
 		case Business.OP_FAVOR:
 			print("评价评价评价评价评价评价评价评价评价评价评价评价 OK")
 		default:
-			super.simpleOperate(response, querier)
+			super.onOperated(response, querier)
 		}
 	}
     
-   
-
 }
 
 /**
@@ -44,9 +42,7 @@ class OrderView : ComboView<Result, ListLeaseOrdersResult, Result> {
 * @author BraveLu
 */
 class BuyerOrderView : OrderView {
-    
- 
-	
+
 //	/** 付款视图 */
 //	protected OpView<Result> m_payView=new OpView<Result>() {
 //		@Override public String getOperationName() {return "付款";}

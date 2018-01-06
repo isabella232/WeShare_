@@ -8,20 +8,39 @@
 
 import UIKit
 
-class InputLeaseReviewOrderController: ComboView<Result, Result, Result> {
+class InputLeaseReviewOrderController: EntityView<Result, Result> {
     
     @IBOutlet weak var orderInfoLabel: UILabel! // 订单信息
     @IBOutlet weak var descTextField: UITextField! // 描述
     @IBOutlet weak var scoreTextField: UITextField! // 评分
     
     var presenter =  ReviewOrderPresenter()
+    override var entityPresenter: EntityPresenter<Result>? {return presenter}
     
-    var targetId: Int! // 订单的id
+    override func commonInit() {
+        presenter.querierProcessor = IQuerierProcessor(getEditQuerierProcessor())
+        super.commonInit()
+    }
+    
+    //var targetId: Int! // 订单的id
     
     @IBAction func done(_ sender: UIButton) {
 //        presenter.execute(LeaseReviewOrderNao.reviewOrderQuerier(targetId, 2, score: Int(scoreTextField.text!)!, content: descTextField.text!))
-        presenter.operate(targetId, IListener(getSimpleOpView()))
+        
+        presenter.review(id, 2, 4, "asdsfsdfsdf", IListener(getSimpleOpView()))
+        //onCmdEdit()
     }
+    
+    override func processInputQuerier<T>(_ querier: Querier<T>) {
+        querier.params["role"] = 2
+        OperationNao<T>.processInputQuerier(id, querier)
+    }
+    
+//    override func processEditQuerier<T>(_ querier: Querier<T>) {
+//        processInputQuerier(querier)
+//        querier.params["score"] = 5
+//        querier.params["content"] = "okokokok"
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +52,8 @@ class InputLeaseReviewOrderController: ComboView<Result, Result, Result> {
 //        }, failure: { (code, msg) in
 //
 //        })
-        
+        id = 10
         onCmdInput()
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,7 +61,7 @@ class InputLeaseReviewOrderController: ComboView<Result, Result, Result> {
         // Dispose of any resources that can be recreated.
     }
     
-    override func simpleOperate<T>(_ response: T, _ querier: Querier<T>?) {
+    override func onOperated<T>(_ response: T, _ querier: Querier<T>?) {
         print("review ok")
     }
     

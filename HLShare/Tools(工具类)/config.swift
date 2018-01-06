@@ -10,20 +10,21 @@ import Foundation
 
 class Config {
 	
-	static var token : String = "12345678"
+    static let BASE_URL = "http://192.168.1.113:8090/"
+
+	static var token : String?
 	
-	static func getToken() -> String {
-		if let t = UserDefaults.standard.value(forKey: "token") {token = t as! String}
-		else {token = ""}
+	static func getToken() -> String? {
+        if let t = UserDefaults.standard.value(forKey: "token"){
+            token = t as? String
+        }
 		return token
 	}
 	
 	static func saveToken(_ token : String) {
-		//self.token = "12333333"
 		self.token = token
 		UserDefaults.standard.set(token, forKey: "token")
 	}
 	
-	static let BASE_URL = "http://localhost:8080/"
 	
 }

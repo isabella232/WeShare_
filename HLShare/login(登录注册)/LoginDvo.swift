@@ -7,11 +7,10 @@
 //
 
 import UIKit
-class LoginDvo: Result{
+class LoginResult : Result {
     required init() {}
     /// 环信用户名
     var easemobUserName: String?
-    
     /// 环信登录密码
     var easemobPassword: String?
    

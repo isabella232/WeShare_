@@ -13,6 +13,7 @@ import UIKit
 class ListLeaseOrdersResult: Result {
     var orders: [LeaseOrderDvo]?
     class LeaseOrderDvo: OrderDvo { required init(){} }
+    required init() {}
 }
 
 /// 供给方 订单UI

@@ -9,11 +9,8 @@
 import UIKit
 
 
-/// 需求方业务管理
 
-
-
-/// 列出需求
+/// 供给方需求
 class DemandsResult: Result{
     
     var demands: [Demand]?
@@ -46,6 +43,7 @@ class DemandsResult: Result{
         
         class badeProvision: Dvo {
             var saleItem: saleItem?
+            var provider: UserDvo?
             required init() {}
             
            

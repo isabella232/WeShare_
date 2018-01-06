@@ -16,53 +16,45 @@ import HandyJSON
 typealias failureBlock = (Int?,String)->Void
 typealias successBlock<R> = (R)->Void
 
-
-class Result: HandyJSON {
-    var error: Int!
-    var desc: String = ""
-    var token: String?
-    required init() {}
-}
-
-
-
-
 class NetworkManager{
- 
-    /// 网络请求成功的状态码
-    //static let successStatusCode = 0
     
+    static func POST<R: Result>(querier: GQuerier<R>) {
     
-//    static func POST<R: Result>(querier: Querier<R>) {
-//        print("url: \(BASEURL + querier.url) \nParms: \(querier.param)")
-//        Alamofire.request(BASEURL + querier.url, method: .post, parameters: querier.param,headers: querier.headers).responseJSON{ (response) in
-//            print("json: \(JSON(response.result.value ?? "josn 为空"))")
-//            switch response.result{
-//            case .success( _):
-//                if let data = response.data {
-//                    if let model = R.deserialize(from: String(data: data, encoding: .utf8)){
-//                        if model.error == 0{
-//                            querier.success(model)
-//                            /// 如果token变化 就把token 及时更新
-//                            if let token = model.token{app_request_token = token}
-//                        }else{
-//                            print("----------Handle Json  处理失败---------")
-//                            querier.failure(400,"--------请求失败-----------")
-//                        }
-//                    }else{
-//                        print("----------Handle Json  处理失败---------")
-//                        querier.failure(100,"----------Handle Json  处理失败---------")
-//                    }
-//                }else{
-//                    print("----------data  nil---------")
-//                    querier.failure(200,"----------data  nil---------")
-//                }
-//            case .failure(let  error):
-//                print("----------网络故障: \(error.localizedDescription)--------")
-//                querier.failure(300,"----------网络故障--------")
-//            }
-//        }
-//    }
+        print("POST请求参数: url: \(BASEURL + querier.url) \nPsarms: \(querier.params)")
+        
+        Alamofire.request(BASEURL + querier.url,
+                          method: .post,
+                          parameters: querier.params,
+                          headers: querier.headers).responseJSON{ (response) in
+                            
+            print("responseJSON: \(JSON(response.result.value ?? "josn 为空"))")
+                            
+            switch response.result{
+            case .success( _):
+                if let data = response.data {
+                    if let model = R.deserialize(from: String(data: data, encoding: .utf8)){
+                        if model.error == 0{
+                            querier.success(model)
+                            /// 如果token变化 就把token 及时更新
+                            if let token = model.token{Config.token = token}
+                        }else{
+                            print("----------Handle Json  处理失败---------")
+                            querier.failure(400,"--------请求失败-----------")
+                        }
+                    }else{
+                        print("----------Handle Json  处理失败---------")
+                        querier.failure(100,"----------Handle Json  处理失败---------")
+                    }
+                }else{
+                    print("----------data  nil---------")
+                    querier.failure(200,"----------data  nil---------")
+                }
+            case .failure(let  error):
+                print("----------网络故障: \(error.localizedDescription)--------")
+                querier.failure(300,"----------网络故障--------")
+            }
+        }
+    }
 
 }
 

@@ -120,6 +120,6 @@ class ReviewOrderNao : ReviewNao<Result> {
 	static func obtainReviewOrderNaoInstance() -> ReviewOrderNao {return INSTANCE}
 	override init() {
 		super.init()
-		baseUrl = Config.BASE_URL+"lease/order/review"
+		baseUrl = Config.BASE_URL+"lease/reviewOrder"
 	}
 }

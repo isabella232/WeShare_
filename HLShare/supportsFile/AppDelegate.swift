@@ -10,12 +10,12 @@ import UIKit
 import CoreData
 #if DEVELOPMENT
     // 测试环境
-let BASEURL = "http://192.168.1.113:8080/"
+let BASEURL = "http://192.168.1.113:8090/"
 let BMK_SERVICES_API_KEY = "测试"
 let HYPHENATELITE_API_KEY = "aa1c2e092bdd44cfc02b1d80d52869ac"
 #else
     // 开发环境
-let BASEURL = "http://192.168.1.113:8080/"
+let BASEURL = "http://192.168.1.113:8090/"
 let BMK_SERVICES_API_KEY = "开发"
 let HYPHENATELITE_API_KEY = "aa1c2e092bdd44cfc02b1d80d52869ac"
 
