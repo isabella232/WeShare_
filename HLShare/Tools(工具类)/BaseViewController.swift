@@ -20,7 +20,21 @@ protocol SwiftNoticeProtocol{
     func errorHandle(error: String)
 }
 
+private var key: Void?
 
+extension UIViewController{
+
+    
+    /* id**/
+    var orderId: Int{
+        get{
+            return (objc_getAssociatedObject(self, &key) as? Int)!
+        }
+        set{
+            objc_setAssociatedObject(self, &key, newValue, .OBJC_ASSOCIATION_ASSIGN)
+        }
+    }
+}
 class BaseViewController<R:Result,E:Result>: UIViewController {
     
     // 带分页器
