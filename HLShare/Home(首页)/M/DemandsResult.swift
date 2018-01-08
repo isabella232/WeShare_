@@ -14,16 +14,7 @@ import UIKit
 class DemandsResult: Result{
     
     var demands: [Demand]?
-    
-    /** 总记录 */
-    var totalRecords: Int?
-   
-    /** 开始位置 */
-    var pageStart: Int?
-    
-    /** 结束位置 */
-    var pageStop: Int?
-    
+        
     required init() {}
     
     class Demand: PoiDvo {
@@ -39,16 +30,23 @@ class DemandsResult: Result{
         var badeProvisionCount: Int?
         
         required init() {}
-        
-        
         class badeProvision: Dvo {
             var saleItem: saleItem?
             var provider: UserDvo?
             required init() {}
-            
-           
         }
     }
 }
+
+class saleItemsResult: Result {
+    var saleItems: [saleItem]?
+    required init() {}
+}
+
+class OrdersResult: Result {
+    var orders: [OrderDvo]?
+    required init() {}
+}
+
 
 

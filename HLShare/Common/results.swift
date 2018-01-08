@@ -9,9 +9,14 @@
 import Foundation
 import HandyJSON
 
-class Result: HandyJSON {
-    var error: Int!
+class Result: Dvo {
+    
     var desc: String?
+    
     var token: String?
+    
+    var error: Int!
+    
+    
     required init() {}
 }

@@ -69,10 +69,7 @@ class Dvo : HandyJSON {
     func canReply() ->Bool{
         return ((Business.OP_REPLY & operations!) != 0);
     }
-    /** 能否举报？ */
-    func canReport() ->Bool{
-        return ((Business.OP_REPORT & operations!) != 0);
-    }
+  
     //是否进行了如下操作
     /** 是否修改？ */
     func didModify() ->Bool{
@@ -99,21 +96,24 @@ class Dvo : HandyJSON {
         return ((Business.OP_FAVOR & operated!) != 0);
     }
     /** 是否举报？ */
-    func didReport() ->Bool{
-        return ((Business.OP_REPORT & operated!) != 0);
+    func didReport() ->String{
+        return ((Business.OP_REPORT & operated!) != 0) ? "举报" : "NO举"
     }
+    
+    /** 能否举报？ */
+    func canReport() -> String {
+        return ((Business.OP_REPORT & operations!) != 0) ? "举报" : ""
+    }
+    
     
     /** 能否付款 */
     func canPay() ->Bool{
         return ((Business.OP_ORDER_PAY & operations!) != 0);
     }
-    
     /** 能否投标 */
-    func canTender() ->Bool{
-        return ((Business.OP_CREATE_RELATED & operations!) != 0);
+    func canTender() ->String{
+        return ((Business.OP_CREATE_RELATED & operations!) != 0) ? "投标" : ""
     }
-    
-    
     /** 能否取消 */
     func canCancel() -> Bool {
         return ((Business.OP_CANCEL & operations!) != 0);
@@ -124,11 +124,7 @@ class Dvo : HandyJSON {
         return ((Business.OP_ORDER_BEGIN & operations!) != 0);
     }
     
-    
-    /** 能否审核 */
-    func canCensor() -> Bool {
-        return ((Business.OP_CENSOR & operations!) != 0);
-    }
+
     
 }
 
@@ -194,6 +190,8 @@ class saleItem: PoiDvo {
     var fileDvos:[FileDvo]?
     
     required init() {}
+    
+    
 }
 
 class FileDvo: Dvo {

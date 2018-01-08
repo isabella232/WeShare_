@@ -67,7 +67,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="pCa-Ix-c1Z">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="add" id="LiH-6c-8Mg">
+                        <barButtonItem key="leftBarButtonItem" title="切换" id="WeE-Ut-lNs">
+                            <connections>
+                                <action selector="changedUser:" destination="BYZ-38-t0r" id="WFH-iw-9Y9"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="LiH-6c-8Mg">
                             <connections>
                                 <action selector="changed:" destination="BYZ-38-t0r" id="0xw-Wl-AwV"/>
                             </connections>
@@ -360,6 +365,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0LB-oU-DBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2728.8000000000002" y="323.38830584707648"/>
+        </scene>
+        <!--Input View Controller-->
+        <scene sceneID="MDw-cs-uA6">
+            <objects>
+                <viewController storyboardIdentifier="InputViewController" id="yXC-cG-HVI" customClass="InputViewController" customModule="HLShare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JsF-ft-dfp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L3b-nO-j8P">
+                                <rect key="frame" x="49" y="48" width="310" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="描述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I91-iJ-kUt">
+                                <rect key="frame" x="6" y="51" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MN-QJ-wNW">
+                                <rect key="frame" x="172" y="112" width="31" height="30"/>
+                                <state key="normal" title="完成"/>
+                                <connections>
+                                    <action selector="done:" destination="yXC-cG-HVI" eventType="touchUpInside" id="Td6-WV-dd7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9MN-QJ-wNW" firstAttribute="top" secondItem="L3b-nO-j8P" secondAttribute="bottom" constant="34" id="1M8-gn-n0e"/>
+                            <constraint firstItem="L3b-nO-j8P" firstAttribute="leading" secondItem="I91-iJ-kUt" secondAttribute="trailing" constant="8" id="Rdo-4z-o3b"/>
+                            <constraint firstItem="9MN-QJ-wNW" firstAttribute="centerX" secondItem="JsF-ft-dfp" secondAttribute="centerX" id="UcE-va-rdN"/>
+                            <constraint firstItem="I91-iJ-kUt" firstAttribute="top" secondItem="HR1-dP-bUD" secondAttribute="top" constant="31" id="Wll-vN-IA2"/>
+                            <constraint firstItem="HR1-dP-bUD" firstAttribute="trailing" secondItem="L3b-nO-j8P" secondAttribute="trailing" constant="16" id="hLL-lg-32Z"/>
+                            <constraint firstItem="I91-iJ-kUt" firstAttribute="leading" secondItem="HR1-dP-bUD" secondAttribute="leading" constant="6" id="lvY-YR-xV2"/>
+                            <constraint firstItem="L3b-nO-j8P" firstAttribute="top" secondItem="HR1-dP-bUD" secondAttribute="top" constant="28" id="rDk-z8-hb4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HR1-dP-bUD"/>
+                    </view>
+                    <connections>
+                        <outlet property="descLabel" destination="I91-iJ-kUt" id="0EF-2w-Kqe"/>
+                        <outlet property="textField" destination="L3b-nO-j8P" id="Jna-CW-8Yb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cqS-aW-Zk6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3677.5999999999999" y="342.27886056971516"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="6wt-yS-AnJ">

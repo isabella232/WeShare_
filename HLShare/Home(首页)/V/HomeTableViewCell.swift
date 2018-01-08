@@ -15,11 +15,24 @@ protocol ListLeaseOrdersProtocol: NSObjectProtocol {
 
 class HomeTableViewCell: UITableViewCell,UITextViewDelegate {
     
+    static let OP_REPORT = "举_报"
+    static let OP_TENDER = "投_标"
+    static let OP_FIX_TENDER = "修改_投标"
+    static let OP_DEL_TENDER = "撤_标"
+    static let OP_DELETE = "删_除"
+    static let OP_RELATED = "下_单"
+    static let OP_SALE_OFF = "下_架"
+    static let OP_SALE_ON = "上_架"
+    static let OP_PAY = "付_款"
+    static let OP_CANCEL = "取_消"
+    static let OP_CANCELED = "已取_消"
+    static let OP_REVIEW = "评_价"
+    static let OP_START_USE = "开始_使用"
 
     @IBOutlet weak var contentTextView: UITextView!
     
     weak var delegate: ListLeaseOrdersProtocol?
-    
+    var user: HomeViewController.User!
     override func awakeFromNib() {
         selectionStyle = .none
         contentTextView.delegate = self
@@ -40,7 +53,16 @@ class HomeTableViewCell: UITableViewCell,UITextViewDelegate {
     var demand: DemandsResult.Demand?{
         didSet{
             if let demand = demand {
+                var op = ""
+                let count = "已经有\(demand.badeProvisionCount ?? 0)人投标"
+                if user == HomeViewController.User.lessor {
+                    op = "修改_投标  举_报  投_标  撤_标" // 需求
+                }else{
+                    op = count + "  " + "删_除 举_报"
+                }
+
                 let str = """
+                详情   需求
                 ID:  \(demand.id!)
                 发布者: \(demand.badeProvision?.provider?.name ?? "nil")
                 标题: \(demand.name ?? "nil")
@@ -49,15 +71,58 @@ class HomeTableViewCell: UITableViewCell,UITextViewDelegate {
                 据我: \(demand.fromMe)
                 价格: \(demand.price)
                 状态: \(demand.badeProvision?.state ?? "nil")
-                操作: \(demand.didReport() ? "举报" : "-举-")  \(demand.canCensor() ? "审核" : "-审-")  \(demand.canTender() ? "| 投标" : "-标-") \(demand.canModify() ? "修改投标" : "-修-") \(demand.canRemove() ? "撤标" : "-撤-")
+                操作: \(op)
                 """
-                contentTextView.attributedText = link(str: str, subs: ["举报","审核","修改投标","撤标","投标 ",demand.badeProvision?.provider?.name ?? demand.badeProvision?.provider?.mobile ?? "无名",demand.badeProvision?.provider?.name ?? "未知"])
+                contentTextView.attributedText = link(str: str, subs: ["举_报","修改_投标","撤_标","投_标 ","删_除",count,demand.badeProvision?.provider?.name ?? demand.badeProvision?.provider?.mobile ?? "无名",demand.badeProvision?.provider?.name ?? "未知"])
             }
-            
-            
         }
-        
-           
+    }
+    
+    var salesResult: saleItem?{
+        didSet{
+            var op = ""
+            if user == HomeViewController.User.lease {
+                op = "下_单  举_报" // 需求
+            }else{
+                op = "修_改  下_架  删_除"
+            }
+            if let sales = salesResult {
+                let str = """
+                ID:  \(sales.id!)
+                供方: \(sales.vendor?.name ?? "nil")
+                标题: \(sales.name ?? "nil")
+                描述: \(sales.content ?? "nil")
+                位置: \(sales.longitude,sales.latitude)
+                据我: \(sales.fromMe)
+                价格: \(sales.price)
+                押金: \(sales.deposit)
+                库存: \(sales.stockNum)
+                状态: \(sales.state ?? "nil")
+                操作: \(op)
+                """
+                 contentTextView.attributedText = link(str: str, subs: ["修_改","下_架","删_除","下_单","举_报"])
+            }
+        }
+    }
+    var orderResult: OrderDvo?{
+        didSet{
+            if let order = orderResult  {
+                let str = """
+                详情   我的订单
+                ID:  \(order.id!)
+                供方: \(order.vendor!.name!)
+                需方: \(order.buyer!.name!)
+                名称: \(order.name!)
+                描述: \(order.item!.saleItem!.content ?? "")
+                位置: \(order.item!.saleItem!.latitude!)
+                应付: \(order.due)
+                实付: \(order.paid)
+                状态: \(order.state!)
+                操作: \(order.canPay() ? " 付款 " : "")  \(order.canCancel() ? " 取消 " : "已取消")  \(order.item!.canReview() ? "| 评价 " : "") \(order.canUser() ? "开始使用 " : "")
+                """
+                contentTextView.attributedText = link(str: str, subs: ["详情"," 付款 "," 取消 "," 评价 ","开始使用",order.vendor!.name ?? order.vendor!.mobile ?? "无名",order.buyer!.name ?? "未知"])
+            }
+        }
     }
     
     
@@ -66,19 +131,20 @@ class HomeTableViewCell: UITableViewCell,UITextViewDelegate {
         let start = textView.text.index(textView.text.startIndex, offsetBy: characterRange.location)
         let end = textView.text.index(textView.text.startIndex, offsetBy: characterRange.location + characterRange.length)
         
-        if  textView.text[start..<end] == "举报" {
+        
+        if  textView.text[start..<end] == HomeTableViewCell.OP_DEL_TENDER {
+            delegate?.leaseOrderOperation(operation: .delete,order: demand!, self)
+        }
+        if  textView.text[start..<end] == HomeTableViewCell.OP_REPORT {
             delegate?.leaseOrderOperation(operation: .report,order: demand!, self)
         }
-        if  textView.text[start..<end]  == "审核" {
-            delegate?.leaseOrderOperation(operation: .censor,order: demand!, self)
-        }
-        if  textView.text[start..<end]  == "投标" {
+        if  textView.text[start..<end]  == HomeTableViewCell.OP_TENDER {
             delegate?.leaseOrderOperation(operation: .input,order: demand!, self)
         }
-        if  textView.text[start..<end]  == "修改投标" {
+        if  textView.text[start..<end]  == HomeTableViewCell.OP_FIX_TENDER {
             delegate?.leaseOrderOperation(operation: .input,order: demand!, self)
         }
-        if  textView.text[start..<end]  == "撤标" {
+        if  textView.text[start..<end]  == HomeTableViewCell.OP_DEL_TENDER {
             delegate?.leaseOrderOperation(operation: .delete,order: demand!, self)
         }
         if  String(textView.text[start..<end])  == demand!.badeProvision!.provider!.name {
@@ -90,22 +156,5 @@ class HomeTableViewCell: UITableViewCell,UITextViewDelegate {
 }
 
 
-//var order: ListLeaseOrdersResult.LeaseOrderDvo!{
-//    didSet{
-//        let str = """
-//        详情
-//        ID:  \(order.id!)
-//        供方: \(order.vendor!.name!)
-//        需方: \(order.buyer!.name!)
-//        名称: \(order.name!)
-//        描述: \(order.item!.saleItem!.content ?? "")
-//        位置: \(order.item!.saleItem!.latitude!)
-//        应付: \(order.due)
-//        实付: \(order.paid)
-//        状态: \(order.state!)
-//        操作: \(order.canPay() ? " 付款 " : "")  \(order.canCancel() ? " 取消 " : "已取消")  \(order.item!.canReview() ? "| 评价 " : "") \(order.canUser() ? "开始使用 " : "")
-//        """
-//        contentTextView.attributedText = link(str: str, subs: ["详情"," 付款 "," 取消 "," 评价 ","开始使用",order.vendor!.name ?? order.vendor!.mobile ?? "无名",order.buyer!.name ?? "未知"])
-//    }
-//}
+
 

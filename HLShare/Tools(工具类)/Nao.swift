@@ -18,7 +18,6 @@ enum OrderOperation: String {
     case edit           = "!edit"
     case delete         = "!delete"
     case report //举报
-    case censor //审核
     case lookupDetails
     case lookupVendor
     case lookupBuyer
@@ -66,9 +65,6 @@ class GNao{
         querier.failure = failure
         NetworkManager.POST(querier: processQuerier(querier: querier))
     }
-    
-
-    
 }
 
 

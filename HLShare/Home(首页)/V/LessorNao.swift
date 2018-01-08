@@ -17,15 +17,39 @@ class LessorNao: GNao {
         execute(querier: GQuerier<R>(url:"demand!find"), success: success, failure: failure)
     }
     // 已投标的需求 列表
-    func listForTender<R: Result>(success:@escaping successBlock<R>, failure: @escaping failureBlock){
+    func listForTender<R: DemandsResult>(success:@escaping successBlock<R>, failure: @escaping failureBlock){
         execute(querier: GQuerier<R>(url:"demand"), success: success, failure: failure)
     }
 
+    /// 列出销售项
+    ///
+    /// - Parameters:
+    ///   - userId: 用户的用户名。空表示获取当前用户的销售项列表，非空表示获取该指定用户发布的销售项列表。
+    ///   - extra: 1：获取当前用户关注用户的销售项列表。2：获取当前用户好友的销售项列表。10：获取所有相关用户的销售项列表。
+    func listForSale<R: saleItemsResult>(userId: String? = nil,extra: Int = 10, success:@escaping successBlock<R>, failure: @escaping failureBlock){
+        let q = GQuerier<R>(url:"sale")
+        if let id = userId {q.params.updateValue(id, forKey: "userId")}
+        q.params.updateValue(extra, forKey: "extra")
+        execute(querier: q, success: success, failure: failure)
+    }
+    
+    
+    /// 我的订单列表
+    ///
+    /// - Parameters:
+    ///   - state:  0 all, 1 活动订单 2 history
+    func listForOrder<R: OrdersResult>(state: Int = 0, success:@escaping successBlock<R>, failure: @escaping failureBlock){
+        let q = GQuerier<R>(url:"order")
+        q.params.updateValue(state, forKey: "state")
+        execute(querier: q, success: success, failure: failure)
+    }
 }
 
-class ProvisionNao: GNao {
-    
-    static let share = ProvisionNao(url: "/lease/lessor/provision")
+class LessorOperationNao: OperationsNao {
+    static let share = LessorOperationNao(url: "lease/lessor/provision")
+}
+
+class OperationsNao: GNao {
     
     /* - demandId: 投标 **/
     func input<R: Result>(demandId: Int,success:@escaping successBlock<R>, failure: @escaping failureBlock){

@@ -15,6 +15,7 @@
 		062570451FECB5D90056FB8B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570441FECB5D90056FB8B /* LoginViewController.swift */; };
 		062570471FECB5EF0056FB8B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570461FECB5EF0056FB8B /* RegisterViewController.swift */; };
 		062570491FECD94F0056FB8B /* LoginDvo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062570481FECD94F0056FB8B /* LoginDvo.swift */; };
+		0626F98320030839004DD92B /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0626F98220030839004DD92B /* InputViewController.swift */; };
 		062E6FEB1FF35CBB00EC92F2 /* LoginNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062E6FEA1FF35CBB00EC92F2 /* LoginNao.swift */; };
 		062E6FED1FF3750700EC92F2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062E6FEC1FF3750700EC92F2 /* BaseViewController.swift */; };
 		0634FFED1FF2400100FA4980 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0634FFEC1FF2400100FA4980 /* HomeTableViewCell.swift */; };
@@ -81,6 +82,7 @@
 		062570441FECB5D90056FB8B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		062570461FECB5EF0056FB8B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		062570481FECD94F0056FB8B /* LoginDvo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDvo.swift; sourceTree = "<group>"; };
+		0626F98220030839004DD92B /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		062E6FEA1FF35CBB00EC92F2 /* LoginNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNao.swift; sourceTree = "<group>"; };
 		062E6FEC1FF3750700EC92F2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0634FFEC1FF2400100FA4980 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 			children = (
 				0668C9931FECAC9D002AA541 /* HomeViewController.swift */,
 				0621CE3F2000CFD600BEDF50 /* ProvisionInputController.swift */,
+				0626F98220030839004DD92B /* InputViewController.swift */,
 				06F9FD9F20007BFA00C3B655 /* LessorNao.swift */,
 				0621CE3D2000A5FE00BEDF50 /* LeaseNao.swift */,
 				0634FFEC1FF2400100FA4980 /* HomeTableViewCell.swift */,
@@ -691,6 +694,7 @@
 				06EDEDB31FFC7DA900124DEF /* InputleseeOrderController.swift in Sources */,
 				062570451FECB5D90056FB8B /* LoginViewController.swift in Sources */,
 				06F9FD9E200078C700C3B655 /* ActionSheet.swift in Sources */,
+				0626F98320030839004DD92B /* InputViewController.swift in Sources */,
 				068DAC541FFFB490004A4088 /* view.swift in Sources */,
 				060137231FFF515000FEB944 /* order_view.swift in Sources */,
 				060137241FFF515000FEB944 /* order_presenter.swift in Sources */,
