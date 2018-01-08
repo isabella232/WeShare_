@@ -18,16 +18,22 @@ class ProvisionInputController: UIViewController {
     
     @IBOutlet weak var tenderInfo: UILabel!
     
-    var id: Int = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        ProvisionNao.share.input(id: id, success: { (result) in
+//<<<<<<< HEAD
+//        
+////        ProvisionNao.share.input(id: id, success: { (result) in
+////            
+////        }) { (code, msg) in
+////
+////        }
+//=======
+//        ProvisionNao.share.input(id: orderId, success: { (result) in
 //            
 //        }) { (code, msg) in
-//
+//            
 //        }
+//>>>>>>> 2502bde1214f1193a141b6baea6c61e0f74e01f1
     }
 
     override func didReceiveMemoryWarning() {

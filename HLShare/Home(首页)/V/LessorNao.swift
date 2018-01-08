@@ -67,7 +67,7 @@ class OperationsNao: GNao {
     
     /*   - id: 提交 标书 **/
     func edit<R: Result>(demandId: Int,saleItemId: Int,success:@escaping successBlock<R>, failure: @escaping failureBlock){
-        let q = GQuerier<R>(operate: OrderOperation.input)
+        let q = GQuerier<R>(operate: OrderOperation.edit)
         q.params.updateValue(demandId, forKey: "demandId")
         q.params.updateValue(saleItemId, forKey: "saleItemId")
         execute(querier: q, success: success, failure: failure)
@@ -75,7 +75,7 @@ class OperationsNao: GNao {
     
     /*   - id: 修改 标书 **/
     func edit<R: Result>(id: Int,success:@escaping successBlock<R>, failure: @escaping failureBlock){
-        let q = GQuerier<R>(operate: OrderOperation.input)
+        let q = GQuerier<R>(operate: OrderOperation.edit)
         q.params.updateValue(id, forKey: "id")
         q.params.updateValue(id, forKey: "saleItem.name")
         q.params.updateValue(id, forKey: "saleItem.content")

@@ -76,7 +76,7 @@ class HomeViewController : UIViewController,UITableViewDataSource,UITableViewDel
         case .input:
             let provision = self.storyboard?.instantiateViewController(withIdentifier: "ProvisionInputController") as! ProvisionInputController
             provision.hidesBottomBarWhenPushed = true
-            provision.id = order.id!
+            provision.orderId = order.id!
             navigationController?.pushViewController(provision, animated: true)
         case .report:
             let input = self.storyboard?.instantiateViewController(withIdentifier: "InputViewController") as! InputViewController
