@@ -36,25 +36,7 @@ class /* should be struct? */ IListener<R> : PListener {
 }
 
 class Communicator<R> {
-	//var presenter : PPresenter? = nil
-	//var operation : Int = 0
-//	func send(_ url : String , _ params : Dictionary<String , Any>? , _ listener : IListener<R>) -> Int {
-//		print("准备发送操作数据：URL=\(url)，参数=\(params)");
-//		//var response : R? = nil
-//		//var response : R? = ListLeaseOrdersResult() as! R
-//		var response : R? = Result() as! R
-//		listener.onResponse(response!, presenter , operation)
-//		//listener.onError(1, "error message")
-//		return 0;
-//	}
-//	func send(_ url : String , _ params : Dictionary<String , Any>? , _ fnOnResponse : FnOnResponse<R>? , _ fnOnError : FnOnError?) -> Int {
-//		print("准备发送操作数据：URL=\(url)，参数=\(params)");
-//		//var response : R? = nil
-//		var response : R? = ListLeaseOrdersResult() as! R
-//		fnOnResponse!(response!)
-//		//fnOnError!(1, "error message")
-//		return 0;
-//	}
+    
 	var querier : Querier<R>? = nil
     //var clazz = Result.self
     var jsonParser : PJsonParser? = nil
@@ -62,17 +44,7 @@ class Communicator<R> {
 	func send(_ querier : Querier<R>) -> Int {
 		self.querier = querier
 		print("准备发送操作数据：URL=\(querier.url)，参数=\(querier.params)");
-//        //var response : R? = nil
-//        //var response : R? = ListLeaseOrdersResult() as! R
-//        var response : R?
-//        if (querier.presenter?.pid == Business.OP_LIST) {response = ListLeaseOrdersResult() as! R}
-//        else if (querier.operation == Business.OP_INPUT) {response = OrderResult() as! R}
-//        else if (querier.operation == Business.OP_DELETE) {response = DeleteOrderResult() as! R}
-//        else {response = Result() as! R}
-//        //let c = type(of:R.self)
-//        //print("\(c)")
-//        //let x = R.init()
-//        return onResponse(response);
+
         print("url: \(querier.url) \nParms: \(querier.params)")
         Alamofire.request(querier.url, method: .post, parameters: querier.params,headers: querier.headers).responseJSON{ (response) in
             print("json: \(JSON(response.result.value ?? "josn 为空"))")
@@ -80,24 +52,7 @@ class Communicator<R> {
             switch response.result{
             case .success( _):
                 if let data = response.data {
-                    
-                    //var RS = R.self as! Result.Type
-                    
-//                    if let model = RS.deserialize(from: String(data: data, encoding: .utf8)){
-//                        if model.error == 0{
-//                            querier.fnOnResponse!(model as! R, querier)
-//                            /// 如果token变化 就把token 及时更新
-//                            if let token = model.token{app_request_token = token}
-//                        }else{
-//                            print("----------Handle Json  处理失败---------")
-//                            querier.failure(400,"--------请求失败-----------")
-//                        }
-//                    }else{
-//                        print("----------Handle Json  处理失败---------")
-//                        querier.failure(100,"----------Handle Json  处理失败---------")
-//                    }
-                    
-//                    r = self.clazz.deserialize(from: String(data: data, encoding: .utf8)) as! R
+            
                     r = self.jsonParser?.parseJson(String(data: data, encoding: .utf8)!) as! R
                     //print(r)
                 }else{

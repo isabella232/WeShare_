@@ -46,14 +46,22 @@
 		06EDEDB51FFCC03700124DEF /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EDEDB41FFCC03700124DEF /* config.swift */; };
 		06F9FD9E200078C700C3B655 /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9FD9D200078C600C3B655 /* ActionSheet.swift */; };
 		06F9FDA020007BFA00C3B655 /* LessorNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9FD9F20007BFA00C3B655 /* LessorNao.swift */; };
-		06F9FDA220008C3C00C3B655 /* Nao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9FDA120008C3B00C3B655 /* Nao.swift */; };
-		06F9FDA420008C4300C3B655 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9FDA320008C4300C3B655 /* Presenter.swift */; };
+		06F9FDA220008C3C00C3B655 /* GNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9FDA120008C3B00C3B655 /* GNao.swift */; };
+		06F9FDA420008C4300C3B655 /* GPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9FDA320008C4300C3B655 /* GPresenter.swift */; };
 		06FC43B01FFFBA970083890B /* results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FC43AF1FFFBA970083890B /* results.swift */; };
 		06FC43B21FFFBC3D0083890B /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FC43B11FFFBC3D0083890B /* Business.swift */; };
 		06FC43B41FFFC9AC0083890B /* EntityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FC43B31FFFC9AC0083890B /* EntityView.swift */; };
 		0C052C352EC13281FF1E21D7 /* Pods_HLShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BAE5C4A87618CB795CD183D /* Pods_HLShare.framework */; };
 		72484368733E239B13EA6158 /* Pods_HLShareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF5A33985ED3F2B3B50E392 /* Pods_HLShareTests.framework */; };
 		D4F40A92BB65346856C83206 /* Pods_HLShareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3267189919C1D99405A4265D /* Pods_HLShareUITests.framework */; };
+		EE8AF1F52004E0A800F711DE /* BuyerDemandListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AF1F42004E0A800F711DE /* BuyerDemandListController.swift */; };
+		EE8AF23C200505AE00F711DE /* DemandPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AF23B200505AE00F711DE /* DemandPresenter.swift */; };
+		EE8AF23E2005074700F711DE /* DemandNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AF23D2005074700F711DE /* DemandNao.swift */; };
+		EE8AF24020050F7000F711DE /* VendorDemandListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AF23F20050F7000F711DE /* VendorDemandListController.swift */; };
+		EE8AF2422005133200F711DE /* SaleItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AF2412005133200F711DE /* SaleItemsPresenter.swift */; };
+		EE8AF244200513B200F711DE /* SaleItemsNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AF243200513B200F711DE /* SaleItemsNao.swift */; };
+		EE8AF24620051CBF00F711DE /* BuyerSaleItemsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AF24520051CBF00F711DE /* BuyerSaleItemsListController.swift */; };
+		EE8AF24820051CD500F711DE /* VendorSaleItemsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AF24720051CD500F711DE /* VendorSaleItemsListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,8 +130,8 @@
 		06EDEDB41FFCC03700124DEF /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		06F9FD9D200078C600C3B655 /* ActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 		06F9FD9F20007BFA00C3B655 /* LessorNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessorNao.swift; sourceTree = "<group>"; };
-		06F9FDA120008C3B00C3B655 /* Nao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nao.swift; sourceTree = "<group>"; };
-		06F9FDA320008C4300C3B655 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		06F9FDA120008C3B00C3B655 /* GNao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GNao.swift; path = "../Tools(工具类)/GNao.swift"; sourceTree = "<group>"; };
+		06F9FDA320008C4300C3B655 /* GPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GPresenter.swift; path = "../Tools(工具类)/GPresenter.swift"; sourceTree = "<group>"; };
 		06FC43AF1FFFBA970083890B /* results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = results.swift; sourceTree = "<group>"; };
 		06FC43B11FFFBC3D0083890B /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		06FC43B31FFFC9AC0083890B /* EntityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityView.swift; sourceTree = "<group>"; };
@@ -135,6 +143,14 @@
 		92FCF699FDD251B7AD5ED615 /* Pods-HLShareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLShareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HLShareTests/Pods-HLShareTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B8D3D64532F21C479A4AE05C /* Pods-HLShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-HLShare/Pods-HLShare.release.xcconfig"; sourceTree = "<group>"; };
 		BB679D4A85B56E2669403AEC /* Pods-HLShareUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLShareUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HLShareUITests/Pods-HLShareUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE8AF1F42004E0A800F711DE /* BuyerDemandListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerDemandListController.swift; sourceTree = "<group>"; };
+		EE8AF23B200505AE00F711DE /* DemandPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemandPresenter.swift; sourceTree = "<group>"; };
+		EE8AF23D2005074700F711DE /* DemandNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemandNao.swift; sourceTree = "<group>"; };
+		EE8AF23F20050F7000F711DE /* VendorDemandListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorDemandListController.swift; sourceTree = "<group>"; };
+		EE8AF2412005133200F711DE /* SaleItemsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleItemsPresenter.swift; sourceTree = "<group>"; };
+		EE8AF243200513B200F711DE /* SaleItemsNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleItemsNao.swift; sourceTree = "<group>"; };
+		EE8AF24520051CBF00F711DE /* BuyerSaleItemsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerSaleItemsListController.swift; sourceTree = "<group>"; };
+		EE8AF24720051CD500F711DE /* VendorSaleItemsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorSaleItemsListController.swift; sourceTree = "<group>"; };
 		FCF8BFDBB03624B9EBEC53A8 /* Pods-HLShareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLShareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HLShareTests/Pods-HLShareTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +206,10 @@
 		0668C98E1FECA6D3002AA541 /* Home(首页) */ = {
 			isa = PBXGroup;
 			children = (
+				EE8AF23B200505AE00F711DE /* DemandPresenter.swift */,
+				EE8AF23D2005074700F711DE /* DemandNao.swift */,
+				EE8AF2412005133200F711DE /* SaleItemsPresenter.swift */,
+				EE8AF243200513B200F711DE /* SaleItemsNao.swift */,
 				06D837811FF11F320037628C /* V */,
 				06D837801FF11F180037628C /* M */,
 			);
@@ -213,8 +233,6 @@
 		0668C9921FECA95F002AA541 /* Tools(工具类) */ = {
 			isa = PBXGroup;
 			children = (
-				06F9FDA120008C3B00C3B655 /* Nao.swift */,
-				06F9FDA320008C4300C3B655 /* Presenter.swift */,
 				06EDEDB41FFCC03700124DEF /* config.swift */,
 				06F9FD9D200078C600C3B655 /* ActionSheet.swift */,
 				06D837761FF0DED70037628C /* SwiftPrefix.swift */,
@@ -228,6 +246,8 @@
 		068DAC381FFFB363004A4088 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				06F9FDA120008C3B00C3B655 /* GNao.swift */,
+				06F9FDA320008C4300C3B655 /* GPresenter.swift */,
 				068DAC511FFFB490004A4088 /* base.swift */,
 				068DAC4E1FFFB490004A4088 /* nao.swift */,
 				068DAC501FFFB490004A4088 /* NetworkManager.swift */,
@@ -326,6 +346,10 @@
 			isa = PBXGroup;
 			children = (
 				0668C9931FECAC9D002AA541 /* HomeViewController.swift */,
+				EE8AF1F42004E0A800F711DE /* BuyerDemandListController.swift */,
+				EE8AF23F20050F7000F711DE /* VendorDemandListController.swift */,
+				EE8AF24520051CBF00F711DE /* BuyerSaleItemsListController.swift */,
+				EE8AF24720051CD500F711DE /* VendorSaleItemsListController.swift */,
 				0621CE3F2000CFD600BEDF50 /* ProvisionInputController.swift */,
 				0626F98220030839004DD92B /* InputViewController.swift */,
 				06F9FD9F20007BFA00C3B655 /* LessorNao.swift */,
@@ -669,8 +693,10 @@
 			files = (
 				062E6FEB1FF35CBB00EC92F2 /* LoginNao.swift in Sources */,
 				062E6FED1FF3750700EC92F2 /* BaseViewController.swift in Sources */,
-				06F9FDA220008C3C00C3B655 /* Nao.swift in Sources */,
+				06F9FDA220008C3C00C3B655 /* GNao.swift in Sources */,
 				068DAC561FFFB490004A4088 /* base.swift in Sources */,
+				EE8AF24820051CD500F711DE /* VendorSaleItemsListController.swift in Sources */,
+				EE8AF1F52004E0A800F711DE /* BuyerDemandListController.swift in Sources */,
 				06FC43B21FFFBC3D0083890B /* Business.swift in Sources */,
 				06847AC51FFE024F00DBFD87 /* LeaseReviewOrderNao.swift in Sources */,
 				06EDEDB51FFCC03700124DEF /* config.swift in Sources */,
@@ -682,13 +708,18 @@
 				062570491FECD94F0056FB8B /* LoginDvo.swift in Sources */,
 				06F9FDA020007BFA00C3B655 /* LessorNao.swift in Sources */,
 				06FC43B01FFFBA970083890B /* results.swift in Sources */,
+				EE8AF24020050F7000F711DE /* VendorDemandListController.swift in Sources */,
 				060137221FFF515000FEB944 /* order_nao.swift in Sources */,
 				06A15D0E1FEB9AF700D7DCB5 /* AppDelegate.swift in Sources */,
 				068DAC571FFFB490004A4088 /* presenter.swift in Sources */,
 				068DAC591FFFB49C004A4088 /* Dvo.swift in Sources */,
-				06F9FDA420008C4300C3B655 /* Presenter.swift in Sources */,
+				06F9FDA420008C4300C3B655 /* GPresenter.swift in Sources */,
+				EE8AF23C200505AE00F711DE /* DemandPresenter.swift in Sources */,
+				EE8AF23E2005074700F711DE /* DemandNao.swift in Sources */,
 				06D837791FF0E5810037628C /* DemandsResult.swift in Sources */,
 				06A15D161FEB9AF700D7DCB5 /* HLShare.xcdatamodeld in Sources */,
+				EE8AF244200513B200F711DE /* SaleItemsNao.swift in Sources */,
+				EE8AF2422005133200F711DE /* SaleItemsPresenter.swift in Sources */,
 				068DAC5C1FFFB8D8004A4088 /* ComboView.swift in Sources */,
 				062570471FECB5EF0056FB8B /* RegisterViewController.swift in Sources */,
 				06EDEDB31FFC7DA900124DEF /* InputleseeOrderController.swift in Sources */,
@@ -702,6 +733,7 @@
 				068DAC531FFFB490004A4088 /* nao.swift in Sources */,
 				06D837751FF0DE330037628C /* SwiftNotice.swift in Sources */,
 				0668C9941FECAC9D002AA541 /* HomeViewController.swift in Sources */,
+				EE8AF24620051CBF00F711DE /* BuyerSaleItemsListController.swift in Sources */,
 				068DAC551FFFB490004A4088 /* NetworkManager.swift in Sources */,
 				06847AC71FFE07FF00DBFD87 /* InputLeaseReviewOrderController.swift in Sources */,
 				068140D41FF4839800705244 /* LesseeOrderNao.swift in Sources */,

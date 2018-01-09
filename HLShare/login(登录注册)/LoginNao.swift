@@ -8,34 +8,22 @@
 
 import UIKit
 
-class LoginNao: BaseEntityNao<LoginResult>{
-    override init() {
-        super.init()
-        tokenAware = false
-    }
-    override func parseJson(_ json: String) -> Any? {
-        return LoginResult.deserialize(from: json)
-    }
-    static func loginQuerier(_ userId: String,_ password: String) -> Querier<LoginResult> {
-        let querier = Querier<LoginResult>()
-        querier.url = "user/user!login"
+class LoginNao: GNao<LoginResult>{
+    static func loginQuerier(_ userId: String,_ password: String) -> GQuerier<LoginResult> {
+        let querier = GQuerier<LoginResult>("!login")
         querier.params.updateValue(password, forKey: "password")
         querier.params.updateValue(userId, forKey: "userId")
         return querier
     }
 }
-class LoginPresenter: EntityPresenter<LoginResult> {
+class LoginPresenter: GPresenter<LoginResult> {
     override init() {
         super.init()
-        nao = LoginNao()
+        self.nao = LoginNao(url: "user/user")
     }
-//    func login(_ username : String , _ password : String , _ onSuccess : FnOnResponse<LoginResult>? , _ onError : FnOnError<LoginResult>) {
-//        execute(nao!, LoginNao.loginQuerier(username , password), onSuccess , nil)
-//    }
     func login(_ username : String , _ password : String) {
-        execute(nao!, LoginNao.loginQuerier(username , password), listener!)
+        execute(nao: nao!, querier: LoginNao.loginQuerier(username, password))
     }
-//    //login method 2
-//    override var querier: Querier<LoginResult>? {return LoginNao.loginQuerier("", "")}
+
 }
 

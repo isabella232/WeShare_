@@ -9,13 +9,7 @@
 import Foundation
 import UIKit
 
-/**
- * 组合视图。内含对实体的操作，以及对实体列表的操作。
- * @param <E> 实体/元素操作返回类型
- * @param <L> 列表操作返回类型
- * @param <I> input操作返回类型
- * @author BraveLu
- */
+
 class ComboView<E, L, I> : EntityView<E, I> {
     
     //{{=======================common cross platforms===============================

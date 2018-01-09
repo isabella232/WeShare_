@@ -20,20 +20,7 @@ class ProvisionInputController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//<<<<<<< HEAD
-//        
-////        ProvisionNao.share.input(id: id, success: { (result) in
-////            
-////        }) { (code, msg) in
-////
-////        }
-//=======
-//        ProvisionNao.share.input(id: orderId, success: { (result) in
-//            
-//        }) { (code, msg) in
-//            
-//        }
-//>>>>>>> 2502bde1214f1193a141b6baea6c61e0f74e01f1
+
     }
 
     override func didReceiveMemoryWarning() {

@@ -116,14 +116,7 @@ class HomeViewController : UIViewController,UITableViewDataSource,UITableViewDel
     @IBAction func changedUser(_ sender: UIBarButtonItem) {
         ActionSheet.show(hint: "", msgs: ["供给方","需求方"], finished: {[unowned self](index, title) in
             if title == "供给方"{
-                /* 查找需求方列表**/
-                LessorNao.share.listDemand(success: {[unowned self] (result) in
-                    self.result = result
-                    self.user = .lessor
-                    self.homeTableView.reloadData()
-                }) { (code, msg) in
-                    
-                }
+                
             }else {
                 /* 查找供给方列表**/
                 LeaseNao.share.listDemand(success: {[unowned self] (result) in

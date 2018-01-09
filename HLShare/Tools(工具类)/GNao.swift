@@ -9,8 +9,7 @@
 import UIKit
 
 
-/// 全局变量  登录的token
-var app_request_token: String?
+
 
 enum OrderOperation: String {
     
@@ -27,12 +26,8 @@ enum OrderOperation: String {
     case startUse
 }
 
-//protocol ProcessQuerier {
-//    associatedtype R: Result
-//    func processQuerier<R>(querier: GQuerier<R>) -> GQuerier<R>
-//}
 
-class GNao{
+class GNao<R>{
     var baseUrl = ""
     var baseParam = [String: Any]()
     var showMsg = ""
@@ -43,7 +38,7 @@ class GNao{
         
         querier.url = baseUrl + querier.url
         
-        if let t = app_request_token {
+        if let t = Config.token {
             querier.params.updateValue(t, forKey: "token")
         }
         
@@ -60,13 +55,60 @@ class GNao{
         return querier
     }
     
-    func execute<R: Result>(querier: GQuerier<R>, success:@escaping successBlock<R>, failure: @escaping failureBlock)  {
+    func execute<R>(querier: GQuerier<R>, success:@escaping successBlock<R>, failure: @escaping failureBlock)  {
         querier.success = success
         querier.failure = failure
-        NetworkManager.POST(querier: processQuerier(querier: querier))
+        NetworkManager.POST(querier: processQuerier(querier: querier) as! GQuerier<Result>)
     }
 }
 
+class OperationsNao<R>: GNao<R>{
+    
+    /* - demandId: 投标 **/
+    func input(demandId: Int,success:@escaping successBlock<R>, failure: @escaping failureBlock){
+        let q = GQuerier<R>( OrderOperation.input)
+        q.params.updateValue(demandId, forKey: "demandId")// 投标
+        execute(querier: q, success: success, failure: failure)
+    }
+    
+    /*   - id: 改标 **/
+    func input<R: Result>(id: Int,success:@escaping successBlock<R>, failure: @escaping failureBlock){
+        let q = GQuerier<R>( OrderOperation.input)
+        q.params.updateValue(id, forKey: "id")// 投标
+        execute(querier: q, success: success, failure: failure)
+    }
+    
+    /*   - id: 提交 标书 **/
+    func edit<R: Result>(demandId: Int,saleItemId: Int,success:@escaping successBlock<R>, failure: @escaping failureBlock){
+        let q = GQuerier<R>( OrderOperation.edit)
+        q.params.updateValue(demandId, forKey: "demandId")
+        q.params.updateValue(saleItemId, forKey: "saleItemId")
+        execute(querier: q, success: success, failure: failure)
+    }
+    
+    /*   - id: 修改 标书 **/
+    func edit<R: Result>(id: Int,success:@escaping successBlock<R>, failure: @escaping failureBlock){
+        let q = GQuerier<R>( OrderOperation.edit)
+        q.params.updateValue(id, forKey: "id")
+        q.params.updateValue(id, forKey: "saleItem.name")
+        q.params.updateValue(id, forKey: "saleItem.content")
+        q.params.updateValue(id, forKey: "saleItem.price")
+        q.params.updateValue(id, forKey: "saleItem.deposit")
+        q.params.updateValue(id, forKey: "saleItem.location.longitude")
+        q.params.updateValue(id, forKey: "saleItem.location.latitude")
+        q.params.updateValue(id, forKey: "saleItem.place")
+        execute(querier: q, success: success, failure: failure)
+    }
+    
+    
+    /*   - id: 撤标 **/
+    func delete<R: Result>(id: Int,success:@escaping successBlock<R>, failure: @escaping failureBlock){
+        let q = GQuerier<R>( OrderOperation.delete)
+        q.params.updateValue(id, forKey: "id")
+        execute(querier: q, success: success, failure: failure)
+    }
+    
+}
 
 
 class GQuerier<R> {
@@ -85,11 +127,11 @@ class GQuerier<R> {
     
     var pager: GPager?
     
-    init(operate: OrderOperation) {
+    init(_ operate: OrderOperation) {
         url = operate.rawValue
     }
    
-    init(url: String) {
+    init(_ url: String) {
         self.url = url
     }
 }
