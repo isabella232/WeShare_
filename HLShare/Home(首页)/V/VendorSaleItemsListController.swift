@@ -10,9 +10,6 @@ import UIKit
 
 class VendorSaleItemsListController: UIViewController {
     
-    
-    
-
     var presenter = VendorSaleItemsListPresenter()
     
     override func viewDidLoad() {

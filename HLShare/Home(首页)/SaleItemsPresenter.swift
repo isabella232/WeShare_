@@ -15,13 +15,11 @@ class SaleItemsListPresenter: GPresenter<saleItemsResult> {
         super.init()
         nao = SaleItemsListNao.saleItemsListInstance()
     }
-
 }
 
 class VendorSaleItemsListPresenter: SaleItemsListPresenter {
     override var querier: GQuerier<saleItemsResult>?{
-        var q = SaleItemsListNao.getVendorSaleItemsListQuerier()
-        return q
+        return SaleItemsListNao.getVendorSaleItemsListQuerier()
     }
 }
 

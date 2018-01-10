@@ -27,13 +27,11 @@ class SaleItemsListNao: GNao<saleItemsResult> {
     ///   - userId: 用户的用户名。空表示获取当前用户的销售项列表，非空表示获取该指定用户发布的销售项列表。
     ///   - extra: 1：获取当前用户关注用户的销售项列表。2：获取当前用户好友的销售项列表。10：获取所有相关用户的销售项列表。
     static func getVendorSaleItemsListQuerier() -> GQuerier<saleItemsResult> {
-        let q = GQuerier<saleItemsResult>("sale")
-//        if let id = userId {q.params.updateValue(id, forKey: "userId")}
-//        q.params.updateValue(extra, forKey: "extra")
+        let q = GQuerier<saleItemsResult>("/lessor/sale")
         return q
     }
     static func getBuyerSaleItemListQuerier()-> GQuerier<saleItemsResult>{
-        return GQuerier<saleItemsResult>("sale")
+        return GQuerier<saleItemsResult>("/lessee/sale")
     }
     
 }
