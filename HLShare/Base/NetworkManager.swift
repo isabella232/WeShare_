@@ -20,6 +20,7 @@ class NetworkManager{
     
     static func POST<R: Result>(querier: GQuerier<R>) {
     
+        
         print("POST请求参数: url: \(BASEURL + querier.url) \nPsarms: \(querier.params)")
         
         Alamofire.request(BASEURL + querier.url,
@@ -32,24 +33,34 @@ class NetworkManager{
             switch response.result{
             case .success( _):
                 if let data = response.data {
+                    
                     if let model = R.deserialize(from: String(data: data, encoding: .utf8)){
                         if model.error == 0{
                             querier.success(model)
+                            querier.listener?.successHandle(model, 0)
                             /// 如果token变化 就把token 及时更新
                             if let token = model.token{Config.token = token}
                         }else{
                             print("----------Handle Json  处理失败---------")
                             querier.failure(400,"--------请求失败-----------")
+                            querier.listener?.failureHandle(400, "--------请求失败-----------", 0)
+
                         }
                     }else{
                         print("----------Handle Json  处理失败---------")
+                        querier.listener?.failureHandle(100, "--------Handle Json  处理失败-----------", 0)
+
                         querier.failure(100,"----------Handle Json  处理失败---------")
                     }
                 }else{
                     print("----------data  nil---------")
+                    querier.listener?.failureHandle(400, "--------data  nil-----------", 0)
+
                     querier.failure(200,"----------data  nil---------")
                 }
             case .failure(let  error):
+                querier.listener?.failureHandle(400, "--------网络故障-----------", 0)
+
                 print("----------网络故障: \(error.localizedDescription)--------")
                 querier.failure(300,"----------网络故障--------")
             }

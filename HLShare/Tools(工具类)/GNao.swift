@@ -27,7 +27,7 @@ enum OrderOperation: String {
 }
 
 
-class GNao<R>{
+class GNao<R: Result>{
     var baseUrl = ""
     var baseParam = [String: Any]()
     var showMsg = ""
@@ -58,11 +58,11 @@ class GNao<R>{
     func execute<R>(querier: GQuerier<R>, success:@escaping successBlock<R>, failure: @escaping failureBlock)  {
         querier.success = success
         querier.failure = failure
-        NetworkManager.POST(querier: processQuerier(querier: querier) as! GQuerier<Result>)
+        NetworkManager.POST(querier: processQuerier(querier: querier))
     }
 }
 
-class OperationsNao<R>: GNao<R>{
+class OperationsNao<R: Result>: GNao<R>{
     
     /* - demandId: 投标 **/
     func input(demandId: Int,success:@escaping successBlock<R>, failure: @escaping failureBlock){
@@ -111,7 +111,7 @@ class OperationsNao<R>: GNao<R>{
 }
 
 
-class GQuerier<R> {
+class GQuerier<R: Result> {
     
     var url: String = ""
     
@@ -121,6 +121,10 @@ class GQuerier<R> {
     
     var desc: String? = nil //网络回调的 描述
     
+    // 协议回调
+    var listener: ResponseHandel<R>?
+    
+    // block 回调
     var success: successBlock<R>!
     
     var failure: failureBlock!

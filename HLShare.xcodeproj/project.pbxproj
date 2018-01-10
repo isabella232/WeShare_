@@ -19,6 +19,7 @@
 		062E6FEB1FF35CBB00EC92F2 /* LoginNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062E6FEA1FF35CBB00EC92F2 /* LoginNao.swift */; };
 		062E6FED1FF3750700EC92F2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062E6FEC1FF3750700EC92F2 /* BaseViewController.swift */; };
 		0634FFED1FF2400100FA4980 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0634FFEC1FF2400100FA4980 /* HomeTableViewCell.swift */; };
+		063E36252005E5D600204F83 /* VendorDemandListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063E36242005E5D600204F83 /* VendorDemandListCell.swift */; };
 		0668C9941FECAC9D002AA541 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0668C9931FECAC9D002AA541 /* HomeViewController.swift */; };
 		068140D41FF4839800705244 /* LesseeOrderNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068140D31FF4839800705244 /* LesseeOrderNao.swift */; };
 		06847AC31FFDED3500DBFD87 /* StringTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06847AC21FFDED3500DBFD87 /* StringTool.swift */; };
@@ -94,6 +95,7 @@
 		062E6FEA1FF35CBB00EC92F2 /* LoginNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNao.swift; sourceTree = "<group>"; };
 		062E6FEC1FF3750700EC92F2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0634FFEC1FF2400100FA4980 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		063E36242005E5D600204F83 /* VendorDemandListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorDemandListCell.swift; sourceTree = "<group>"; };
 		0668C9931FECAC9D002AA541 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		068140D31FF4839800705244 /* LesseeOrderNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LesseeOrderNao.swift; sourceTree = "<group>"; };
 		068140D51FF49B5E00705244 /* HLShare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HLShare-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				0668C9931FECAC9D002AA541 /* HomeViewController.swift */,
 				EE8AF1F42004E0A800F711DE /* BuyerDemandListController.swift */,
 				EE8AF23F20050F7000F711DE /* VendorDemandListController.swift */,
+				063E36242005E5D600204F83 /* VendorDemandListCell.swift */,
 				EE8AF24520051CBF00F711DE /* BuyerSaleItemsListController.swift */,
 				EE8AF24720051CD500F711DE /* VendorSaleItemsListController.swift */,
 				0621CE3F2000CFD600BEDF50 /* ProvisionInputController.swift */,
@@ -699,6 +702,7 @@
 				EE8AF1F52004E0A800F711DE /* BuyerDemandListController.swift in Sources */,
 				06FC43B21FFFBC3D0083890B /* Business.swift in Sources */,
 				06847AC51FFE024F00DBFD87 /* LeaseReviewOrderNao.swift in Sources */,
+				063E36252005E5D600204F83 /* VendorDemandListCell.swift in Sources */,
 				06EDEDB51FFCC03700124DEF /* config.swift in Sources */,
 				06847AC31FFDED3500DBFD87 /* StringTool.swift in Sources */,
 				06EDEDB11FFC63DE00124DEF /* ListLeaseOrdersResult.swift in Sources */,

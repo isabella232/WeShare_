@@ -100,18 +100,7 @@ class ListPresenter<R> : Presenter<R> {
 class GroupPresenter<R> : Presenter<R> {
 	/** Presenter组 */
 	lazy var group = [Int : Any]()
-	//public void setGroup(Map<Integer, Presenter<?>> group) {m_group = group;}
-//	func obtainGroup() -> Dictionary<Int, Presenter<Any>> {
-//		if group==nil {group = createGroup()}
-//		return group!
-//	}
-	/** 创建组 */
-	//func createGroup() -> Dictionary<Int, Presenter<AnyClass>> {return Dictionary<Int, Presenter<Any>>()}
-	/**
-	* 查找内部的Presenter
-	* @param pid Presenter ID
-	* @return
-	*/
+	
 	func findPresenter<T>(_ pid : Int) -> Presenter<T>? {
 		if let p = group[pid] { return p as! Presenter<T>}
 		return nil

@@ -17,24 +17,25 @@ class DemandsResult: Result{
         
     required init() {}
     
-    class Demand: PoiDvo {
-        
-        var fileDvos: [FileDvo]?
-        
-        var badeProvision: badeProvision?
-
-        /** 需求价格 */
-        var price: Float?
-        
-        /** （当前用户作为需方时）投标的数量 */
-        var badeProvisionCount: Int?
-        
+    
+}
+class Demand: PoiDvo {
+    
+    var fileDvos: [FileDvo]?
+    
+    var badeProvision: badeProvision?
+    
+    /** 需求价格 */
+    var price: Float?
+    
+    /** （当前用户作为需方时）投标的数量 */
+    var badeProvisionCount: Int?
+    
+    required init() {}
+    class badeProvision: Dvo {
+        var saleItem: saleItem?
+        var provider: UserDvo?
         required init() {}
-        class badeProvision: Dvo {
-            var saleItem: saleItem?
-            var provider: UserDvo?
-            required init() {}
-        }
     }
 }
 

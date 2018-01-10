@@ -13,14 +13,9 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     @IBAction func userRegister(_ sender: UIButton) {
-//        NetworkManager.POST(url: "/user/user!register", param: ["userInfo.mobile":"","userInfo.password":"","userInfo.passwordConfirm":"","userInfo.validationCode":""], success: { (json) in
-//            
-//        }) { (error) in
-//            
-//        }
+
 
         
 //        let tabbar = self.storyboard?.instantiateViewController(withIdentifier: "MainTabbar")

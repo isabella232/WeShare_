@@ -8,30 +8,14 @@
 
 import UIKit
 
-protocol ListLeaseOrdersProtocol: NSObjectProtocol {
-    func leaseOrderOperation(operation: OrderOperation,order: DemandsResult.Demand,_ cell: UITableViewCell)
-}
 
 
 class HomeTableViewCell: UITableViewCell,UITextViewDelegate {
     
-    static let OP_REPORT = "举_报"
-    static let OP_TENDER = "投_标"
-    static let OP_FIX_TENDER = "修改_投标"
-    static let OP_DEL_TENDER = "撤_标"
-    static let OP_DELETE = "删_除"
-    static let OP_RELATED = "下_单"
-    static let OP_SALE_OFF = "下_架"
-    static let OP_SALE_ON = "上_架"
-    static let OP_PAY = "付_款"
-    static let OP_CANCEL = "取_消"
-    static let OP_CANCELED = "已取_消"
-    static let OP_REVIEW = "评_价"
-    static let OP_START_USE = "开始_使用"
+    
 
     @IBOutlet weak var contentTextView: UITextView!
     
-    weak var delegate: ListLeaseOrdersProtocol?
     var user: HomeViewController.User!
     override func awakeFromNib() {
         selectionStyle = .none
@@ -50,7 +34,7 @@ class HomeTableViewCell: UITableViewCell,UITextViewDelegate {
         return content
     }
     
-    var demand: DemandsResult.Demand?{
+    var demand: Demand?{
         didSet{
             if let demand = demand {
                 var op = ""
@@ -126,32 +110,7 @@ class HomeTableViewCell: UITableViewCell,UITextViewDelegate {
     }
     
     
-    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-        
-        let start = textView.text.index(textView.text.startIndex, offsetBy: characterRange.location)
-        let end = textView.text.index(textView.text.startIndex, offsetBy: characterRange.location + characterRange.length)
-        
-        
-        if  textView.text[start..<end] == HomeTableViewCell.OP_DEL_TENDER {
-            delegate?.leaseOrderOperation(operation: .delete,order: demand!, self)
-        }
-        if  textView.text[start..<end] == HomeTableViewCell.OP_REPORT {
-            delegate?.leaseOrderOperation(operation: .report,order: demand!, self)
-        }
-        if  textView.text[start..<end]  == HomeTableViewCell.OP_TENDER {
-            delegate?.leaseOrderOperation(operation: .input,order: demand!, self)
-        }
-        if  textView.text[start..<end]  == HomeTableViewCell.OP_FIX_TENDER {
-            delegate?.leaseOrderOperation(operation: .input,order: demand!, self)
-        }
-        if  textView.text[start..<end]  == HomeTableViewCell.OP_DEL_TENDER {
-            delegate?.leaseOrderOperation(operation: .delete,order: demand!, self)
-        }
-        if  String(textView.text[start..<end])  == demand!.badeProvision!.provider!.name {
-            delegate?.leaseOrderOperation(operation: .lookupVendor,order: demand!, self)
-        }
-        return false
-    }
+    
     
 }
 

@@ -9,8 +9,8 @@
 import UIKit
 import HandyJSON
 
-class HomeViewController : UIViewController,UITableViewDataSource,UITableViewDelegate,ListLeaseOrdersProtocol {
-  
+class HomeViewController : UIViewController,ListLeaseOrdersProtocol {
+    
     /* 使用方 **/
     enum User{
         case lessor // 供给方
@@ -22,13 +22,8 @@ class HomeViewController : UIViewController,UITableViewDataSource,UITableViewDel
         case forMineOrder   // 我的订单
         case none
     }
-    /// 列表
-    @IBOutlet weak var homeTableView: UITableView!
     
-    /*  数据源 **/
-    var result: DemandsResult?
-    var salesResult: saleItemsResult?
-    var orderResult: OrdersResult?
+    
 
     // 默认显示供给方
     var user: User = .lessor
@@ -36,42 +31,14 @@ class HomeViewController : UIViewController,UITableViewDataSource,UITableViewDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.homeTableView.rowHeight = 300
         
-        // 默认 供给方
-        changedUser(UIBarButtonItem())
+        let vendorVC = self.storyboard?.instantiateViewController(withIdentifier: "VendorDemandListController") as! VendorDemandListController
+        self.view.addSubview(vendorVC.view)
+        self.addChildViewController(vendorVC)
     }
-  
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch service {
-        case .forSale:
-            return salesResult?.saleItems?.count ?? 0
-        case .forMineOrder:
-            return orderResult?.orders?.count ?? 0
-        default:
-            return self.result?.demands?.count ?? 0
-        }
-    }
-      
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! HomeTableViewCell
-        cell.delegate = self
-        cell.user = user
-        switch service {
-        case .forSale:
-            cell.salesResult = salesResult?.saleItems?[indexPath.row]
-        case .forMineOrder:
-            cell.orderResult = orderResult?.orders?[indexPath.row]
-        default:
-            cell.demand = result?.demands?[indexPath.row]
-        }
-        return cell
-    }
-    
     
  
-    func leaseOrderOperation(operation: OrderOperation, order: DemandsResult.Demand, _ cell: UITableViewCell) {
+    func leaseOrderOperation(operation: OrderOperation, order: Demand, _ cell: UITableViewCell) {
         switch operation {
         case .input:
             let provision = self.storyboard?.instantiateViewController(withIdentifier: "ProvisionInputController") as! ProvisionInputController
@@ -104,9 +71,7 @@ class HomeViewController : UIViewController,UITableViewDataSource,UITableViewDel
         }
    }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-    }
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -118,17 +83,9 @@ class HomeViewController : UIViewController,UITableViewDataSource,UITableViewDel
             if title == "供给方"{
                 
             }else {
-                /* 查找供给方列表**/
-                LeaseNao.share.listDemand(success: {[unowned self] (result) in
-                    self.result = result
-                    self.user = .lease
-                    self.homeTableView.reloadData()
-                }) { (code, msg) in
-                    
-                }
+                
             }
             self.title = title
-            self.homeTableView.reloadData()
         })
     }
     
@@ -159,48 +116,19 @@ class HomeViewController : UIViewController,UITableViewDataSource,UITableViewDel
                 print("")
                 print("")
             case "我的投标需求":
-                LessorNao.share.listForTender(success: {[unowned self] (result) in
-                    self.result = result
-                    self.service = .forTenderDemand
-                    self.homeTableView.reloadData()
-                    }, failure: { (code, msg) in
-                        
-                })
+                print("")
+                print("")
             case "列出销售项":
                 if self.user == .lessor{
-                    LessorNao.share.listForSale(success: { (result) in
-                        self.salesResult = result
-                        self.service = .forSale
-                        self.homeTableView.reloadData()
-                    }, failure: { (code, msg) in
-                        
-                    })
+                    
                 }else{
-                    LeaseNao.share.listForSale(success: { (result) in
-                        self.salesResult = result
-                        self.service = .forSale
-                        self.homeTableView.reloadData()
-                    }, failure: { (code, msg) in
-                        
-                    })
+                  
                 }
             case "我的订单":
                 if self.user == .lessor{
-                    LessorNao.share.listForOrder(success: { (result) in
-                        self.orderResult = result
-                        self.service = .forMineOrder
-                        self.homeTableView.reloadData()
-                    }, failure: { (code, msg) in
-                        
-                    })
+                   
                 }else{
-                    LeaseNao.share.listForOrder(success: { (result) in
-                        self.orderResult = result
-                        self.service = .forMineOrder
-                        self.homeTableView.reloadData()
-                    }, failure: { (code, msg) in
-                        
-                    })
+                   
                 }
             default:
                 print("")
