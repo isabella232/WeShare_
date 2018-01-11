@@ -1,0 +1,6 @@
+framework module Pods_HLShareUITests {
+  umbrella header "Pods-HLShareUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

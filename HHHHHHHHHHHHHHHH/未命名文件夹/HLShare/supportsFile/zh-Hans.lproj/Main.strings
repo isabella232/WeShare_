@@ -1,0 +1,48 @@
+
+/* Class = "UILabel"; text = "id:"; ObjectID = "4iR-tn-8Zg"; */
+"4iR-tn-8Zg.text" = "id:";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "4wz-lu-Rfk"; */
+"4wz-lu-Rfk.normalTitle" = "登录";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "6qL-Ps-qvQ"; */
+"6qL-Ps-qvQ.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "下单"; ObjectID = "LMA-o3-X6e"; */
+"LMA-o3-X6e.normalTitle" = "下单";
+
+/* Class = "UIBarButtonItem"; title = "切换"; ObjectID = "LiH-6c-8Mg"; */
+"LiH-6c-8Mg.title" = "切换";
+
+/* Class = "UIButton"; normalTitle = "审核"; ObjectID = "O0L-8q-69R"; */
+"O0L-8q-69R.normalTitle" = "审核";
+
+/* Class = "UIButton"; normalTitle = "注册"; ObjectID = "RIx-UL-dyG"; */
+"RIx-UL-dyG.normalTitle" = "注册";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Vq3-2A-A8u"; */
+"Vq3-2A-A8u.normalTitle" = "Button";
+
+/* Class = "UISegmentedControl"; eJ9-Lg-C3H.segmentTitles[0] = "供给方"; ObjectID = "eJ9-Lg-C3H"; */
+"eJ9-Lg-C3H.segmentTitles[0]" = "供给方";
+
+/* Class = "UISegmentedControl"; eJ9-Lg-C3H.segmentTitles[1] = "需求方"; ObjectID = "eJ9-Lg-C3H"; */
+"eJ9-Lg-C3H.segmentTitles[1]" = "需求方";
+
+/* Class = "UIButton"; normalTitle = "注册"; ObjectID = "f0w-1E-3WH"; */
+"f0w-1E-3WH.normalTitle" = "注册";
+
+/* Class = "UITabBarItem"; title = "首页"; ObjectID = "kke-Ar-oeN"; */
+"kke-Ar-oeN.title" = "首页";
+
+/* Class = "UIButton"; normalTitle = "投标"; ObjectID = "m34-sO-7kk"; */
+"m34-sO-7kk.normalTitle" = "投标";
+
+/* Class = "UITabBarItem"; title = "发现"; ObjectID = "rsO-bO-FC3"; */
+"rsO-bO-FC3.title" = "发现";
+
+/* Class = "UITabBarItem"; title = "我的"; ObjectID = "som-gu-loG"; */
+"som-gu-loG.title" = "我的";
+
+/* Class = "UITabBarItem"; title = "通讯录"; ObjectID = "tHV-hT-xbf"; */
+"tHV-hT-xbf.title" = "通讯录";
