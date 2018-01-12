@@ -8,14 +8,12 @@
 
 import UIKit
 
-class VendorDemandListController: UITableViewController,ResponseHandelProtocol {
+class VendorDemandListController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     
-    typealias Value = DemandsResult
     
-    var presenter = VendorDemandListPresenter()
+//    var presenter = VendorDemandListPresenter()
     
-    var demand: DemandsResult?
     
     let CELL_REUSABLE_IDENFIFIER = "vendorDemandList"
     
@@ -23,30 +21,20 @@ class VendorDemandListController: UITableViewController,ResponseHandelProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter.execute()
     }
     
-    func successHandle(_ response: DemandsResult, _ operation: Int) {
-            self.demand = response
-            self.tableView.reloadData()
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
     }
-    
-    func failureHandle(_ error: Int, _ msg: String, _ operation: Int) {
-        
-    }
-    
-    
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return demand?.demands?.count ?? 0
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_REUSABLE_IDENFIFIER, for: indexPath) as! VendorDemandListCell
-        if let entitys = demand?.demands {cell.entity = entitys[indexPath.row]}
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         return cell
-        
     }
+    
+    
+    
+    
+   
     
     
 

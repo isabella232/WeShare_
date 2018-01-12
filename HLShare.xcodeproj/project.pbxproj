@@ -349,9 +349,9 @@
 			children = (
 				0668C9931FECAC9D002AA541 /* HomeViewController.swift */,
 				EE8AF1F42004E0A800F711DE /* BuyerDemandListController.swift */,
+				EE8AF24520051CBF00F711DE /* BuyerSaleItemsListController.swift */,
 				EE8AF23F20050F7000F711DE /* VendorDemandListController.swift */,
 				063E36242005E5D600204F83 /* VendorDemandListCell.swift */,
-				EE8AF24520051CBF00F711DE /* BuyerSaleItemsListController.swift */,
 				EE8AF24720051CD500F711DE /* VendorSaleItemsListController.swift */,
 				0621CE3F2000CFD600BEDF50 /* ProvisionInputController.swift */,
 				0626F98220030839004DD92B /* InputViewController.swift */,

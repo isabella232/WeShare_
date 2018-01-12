@@ -8,9 +8,9 @@
 
 import UIKit
 
-class VendorSaleItemsListController: UIViewController {
+class VendorSaleItemsListController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    var presenter = VendorSaleItemsListPresenter()
+//    var presenter = VendorSaleItemsListPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,13 @@ class VendorSaleItemsListController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        return cell
+    }
 
     /*
     // MARK: - Navigation
